@@ -1,0 +1,197 @@
+/* Size for brand */
+nav .navbar-brand {
+    font-size: 1.5rem;
+    /* Adjust size as needed */
+}
+
+/* Colors for brand */
+nav .navbar-brand .blue {
+    color: #537fbe;
+}
+
+nav .navbar-brand .red {
+    color: #ea433b;
+}
+
+nav .navbar-brand .yellow {
+    color: #f5b82e;
+}
+
+nav .navbar-brand .green {
+    color: #2e944b;
+}
+
+body {
+    background-color: #1c1c1c;
+    font-family: 'Arial', sans-serif;
+    color: white;
+    text-align: center;
+}
+
+.main-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    /* Make both containers equal in height */
+    margin: 0 auto;
+    width: 70%;
+    /* Adjust as per the existing layout */
+}
+
+.dashboard-container {
+    flex: 1;
+    margin: 0 auto;
+    width: 70%;
+    border: 2px solid #00ff00;
+    padding: 20px;
+    background-color: #2e2e2e;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    /* Stack items vertically */
+    align-items: center;
+    /* Center all children horizontally */
+    position: relative;
+    /* For positioning if needed */
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+    /* Shadow for depth */
+}
+
+h2 {
+    color: #00ff00;
+    font-size: 2em;
+}
+h4 {
+    font-size: 1.2em;
+    text-align: justify;
+}
+.footer h2 {
+    font-size: 1em;
+    color: #ccc;
+    /* Lighter color for footer */
+}
+input[type="text"],
+input[type="password"] {
+    padding: 10px;
+    font-size: 16px;
+    width: 70%;
+    margin-right: 5px;
+    border-radius: 5px;
+    border: 1px solid #00ff00;
+    background-color: #1c1c1c;
+    color: white;
+    display: inline-block;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #1c1c1c;
+    background-color: #00ff00;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #009900;
+    transform: scale(1.05); /* Slight scale on hover */
+}
+
+
+.icons {
+    display: inline-block;
+
+}
+
+.icons img {
+    width: auto;
+    height: 80px;
+}
+
+/* Footer styles */
+.footer {
+    position: fixed; /* Change to fixed for consistent positioning */
+    bottom: 0; /* Stick to the bottom */
+    left: 50%; /* Align left */
+    transform: translateX(-50%); /* Center horizontally */
+    text-align: center; /* Center the text */
+    width: 70%; /* Set width; adjust as necessary */
+    padding: 10px; /* Add some padding */
+    color: #ccc; /* Text color */
+    z-index: 1; /* Bring footer to the front */
+}
+
+.popup {
+    position: relative;
+    display: inline-block; /* Allows the popup to be inline with the text */
+    cursor: pointer; /* Indicates that the popup can be clicked */
+    color: #000ff0;
+}
+
+/* Popup text styles */
+.popuptext {
+    visibility: hidden; /* Initially hide the popup */
+    width: 600px; /* Set a width for the popup */
+    max-height: 400px; /* Set a maximum height for the popup */
+    overflow-y: auto; /* Enable vertical scrolling */
+    background-color: #ffffff; /* Light background for better contrast */
+    color: #333; /* Text color */
+    text-align: left; /* Align text to the left */
+    border-radius: 10px; /* Rounded corners */
+    padding: 15px; /* More padding for a spacious feel */
+    position: absolute; /* Position it below the text */
+    z-index: 1; /* Ensures it is on top */
+    bottom: 125%; /* Position above the button */
+    left: 50%; /* Center it */
+    margin-left: -300px; /* Adjust the margin to align it */
+    transition: visibility 0s, opacity 0.3s ease-in-out; /* Smooth transition */
+    opacity: 0; /* Initially invisible */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Soft shadow for depth */
+}
+
+/* Show the popup */
+.popuptext.visible {
+    visibility: visible; /* Show the popup */
+    opacity: 1; /* Make it fully visible */
+}
+
+/* Style for images inside li elements */
+ol li img {
+    width: 20px; /* Set a fixed width for the image */
+    height: auto; /* Maintain the aspect ratio */
+    border-radius: 8px; /* Add rounded corners to the image */
+    margin: 5px 0; /* Add some spacing above and below the image */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    display: inline-block; /* Keep the image inline with text */
+}
+
+/* Scrollbar styles for the popup */
+.popuptext::-webkit-scrollbar {
+    width: 8px; /* Width of the scrollbar */
+}
+
+.popuptext::-webkit-scrollbar-thumb {
+    background-color: #888; /* Scrollbar thumb color */
+    border-radius: 10px; /* Rounded scrollbar thumb */
+}
+
+.popuptext::-webkit-scrollbar-thumb:hover {
+    background-color: #555; /* Darker color on hover */
+}
+
+/* Optional: Add a fade-in effect */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Apply fade-in effect to visible popup */
+.popuptext.visible {
+    animation: fadeIn 0.5s; /* Apply fade-in animation */
+}

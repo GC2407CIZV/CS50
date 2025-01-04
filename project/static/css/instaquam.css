@@ -1,0 +1,224 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #1c1c1c;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.phone-frame {
+    width: 375px;
+    height: 667px;
+    border: 10px solid #00B500;
+    /* Use transparent border for gradient */
+    border-radius: 36px;
+    overflow: hidden;
+    position: relative;
+    /* Position relative for pseudo-elements */
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.6),
+        /* Stronger main shadow */
+        0 0 70px rgba(0, 128, 0, 0.5);
+    /* Glowing shadow effect */
+    background: linear-gradient(to bottom, #00B500, #009900);
+    /* Background gradient */
+}
+
+.phone-frame::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border-radius: 45px;
+    /* Slightly larger radius for outer shadow */
+    background: rgba(0, 0, 0, 0.15);
+    /* Darker shadow effect */
+    z-index: -1;
+    /* Place behind the frame */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
+    /* Shadow for depth */
+}
+
+.inner-phone {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #dbdbdb;
+    background-color: #fff;
+}
+
+header img {
+    height: 30px;
+}
+
+.instaquam {
+    font-family: 'Pacifico', cursive;
+    /* Instagram-like font */
+    font-size: 28px;
+    /* Adjust size as needed */
+    background: linear-gradient(90deg, #F58529, #F77737, #FBD40D, #D62976, #962FBF);
+    /* Instagram gradient */
+    background-clip: text;
+    -webkit-background-clip: text;
+    /* For Safari */
+    -webkit-text-fill-color: transparent;
+    /* Makes the text color transparent */
+    display: flex;
+    margin-right: 10px;
+}
+
+.instaquam img {
+    width: 35px;
+    /* Adjust logo size */
+    height: auto;
+    /* Maintain aspect ratio */
+    margin-right: 60px;
+    /* Space between image and text */
+}
+
+.container {
+    flex: 1;
+    overflow-y: auto;
+}
+
+.story-section {
+    display: flex;
+    padding: 10px;
+    border-bottom: 1px solid #dbdbdb;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.story {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 10px;
+    border: 2px solid #ff4500;
+    background-size: cover;
+    background-position: center;
+}
+
+.story:hover {
+    opacity: 0.8;
+}
+
+.post {
+    padding: 15px;
+    border-bottom: 1px solid #dbdbdb;
+}
+
+.post img {
+    width: 100%;
+    border-radius: 5px;
+    transition: transform 0.2s;
+    /* Smooth transition */
+}
+
+.post img:hover {
+    transform: scale(1.05);
+    /* Slightly zoom in on hover */
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    background-size: cover;
+    background-position: center;
+}
+
+.post-header-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.post-header-info strong {
+    font-size: 14px;
+    color: #262626;
+}
+
+.post-header-info .location {
+    font-size: 12px;
+    color: #8e8e8e;
+}
+
+.interactions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.interaction-icons {
+    display: flex;
+    gap: 20px;
+}
+
+.interaction-icons img {
+    width: 24px;
+    cursor: pointer;
+}
+
+.caption {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #262626;
+}
+
+.comments {
+    margin-top: 5px;
+    font-size: 12px;
+    color: #8e8e8e;
+}
+
+.timestamp {
+    margin-top: 5px;
+    font-size: 10px;
+    color: #8e8e8e;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    background-color: #fff;
+    border-top: 1px solid #dbdbdb;
+    padding: 10px 0;
+}
+
+.nav-item {
+    text-align: center;
+    color: #262626;
+}
+
+.nav-item img {
+    height: 24px;
+    border: none;
+}
+
+.nav-item:hover {
+    opacity: 0.8;
+    background-color: #4C4C4C;
+    border-radius: 5px;
+
+}

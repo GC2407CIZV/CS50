@@ -1,0 +1,182 @@
+body {
+    font-family: 'Georgia', serif;
+    /* Elegant font */
+    background-color: #0e0e0e;
+    /* Dark background */
+    color: #f5f5f5;
+    /* Light text color */
+    line-height: 1.8;
+    /* Improved line height for readability */
+    padding: 20px;
+    margin: 0;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #ffd700;
+    /* Gold color for a touch of elegance */
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+    /* Subtle shadow */
+}
+
+h3 {
+    text-align: center;
+    font-size: 2em;
+    margin: 30px 0 10px 0;
+    color: #ffcc00;
+    /* Slightly lighter gold */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    /* Subtle shadow */
+}
+
+/* General explanation styles */
+.explanation {
+    border-radius: 10px;
+    padding: 20px 25px;
+    /* Padding for the content */
+    margin: 25px 0;
+    /* Spacing between sections */
+    border-left: 5px solid #ffd700;
+    /* Gold border for visual separation */
+    position: relative;
+    /* To position the overlay */
+    overflow: hidden;
+    /* Prevents overflow of the overlay */
+}
+
+.explanation .signature {
+    text-align: right !important;
+    /* Ensures the signature is aligned to the right */
+}
+
+.signature {
+    text-align: right;
+    margin-right: 200px;
+}
+
+/* Specific styles for each topic */
+#adventure {
+    background-image:
+        linear-gradient(to left, rgba(14, 14, 14, 1) 0%, rgba(14, 14, 14, 0) 20%),
+        linear-gradient(to right, rgba(14, 14, 14, 1) 0%, rgba(14, 14, 14, 0) 20%),
+        url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F2d%2F8a%2F11%2F2d8a1184a0de39800f241d1847378ca2.jpg&f=1&nofb=1&ipt=0e639878045524606b155f7f7f87227cf1009b5f359c7f5be42081b26ebcd9d4&ipo=images');
+    background-size: cover;
+    background-position: 50% 53%;
+}
+
+#courage {
+    background-image:
+        linear-gradient(to left, rgba(14, 14, 14, 1) 0%, rgba(14, 14, 14, 0) 20%),
+        linear-gradient(to right, rgba(14, 14, 14, 1) 0%, rgba(14, 14, 14, 0) 20%),
+        url('https://scontent.ffsz1-1.fna.fbcdn.net/v/t1.6435-9/47573010_739599303092983_95281306841120768_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=cf85f3&_nc_ohc=0xYRPQ65XNgQ7kNvgG5qiYp&_nc_ht=scontent.ffsz1-1.fna&_nc_gid=AXAT83Bmp_x342PTuPQQRXW&oh=00_AYBbpR0h69wFkTYiUiOS21cesWwL7fR77LMU7OfnKgiDUA&oe=67335B6E');
+    background-size: cover;
+    background-position: 50% 80%;
+}
+
+#hero {
+    background-image:
+        linear-gradient(to left, rgba(14, 14, 14, 1) 0%, rgba(14, 14, 14, 0) 20%),
+        linear-gradient(to right, rgba(14, 14, 14, 1) 0%, rgba(14, 14, 14, 0) 20%),
+        url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.wallpapersafari.com%2F13%2F89%2FFif4E1.jpg&f=1&nofb=1&ipt=c70400bec5b682f1ef3a2b212e7abbe5960f67b3bf2e7e24d8b9c4e2353fbd54&ipo=images');
+    background-size: 700px auto;
+    /* Adjusts the size of the image and gradient */
+    background-repeat: no-repeat;
+    background-position: center;
+
+
+}
+
+#authentic {
+    background-image:
+        linear-gradient(to left, rgba(14, 14, 14, 1) 0%, rgba(14, 14, 14, 0) 20%),
+        linear-gradient(to right, rgba(14, 14, 14, 1) 0%, rgba(14, 14, 14, 0) 20%),
+        url('https://scontent.ffsz1-2.fna.fbcdn.net/v/t1.6435-9/48361771_741963399523240_419148581425905664_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=cf85f3&_nc_ohc=O2-XyjeTrt8Q7kNvgGmSfOC&_nc_ht=scontent.ffsz1-2.fna&_nc_gid=AR3lrD2IqEW5zbQDi-gcoIM&oh=00_AYAVHt5ZiMaZX-lZMBIi1HdezgVNkFQorTdhDjyVcf5ZsQ&oe=6733661C');
+    background-size: cover;
+    background-position: center;
+}
+
+#growth {
+    background-image: linear-gradient(to left, rgba(14, 14, 14, 1) 0%, rgba(14, 14, 14, 0) 10%),
+        linear-gradient(to right, rgba(14, 14, 14, 1) 0%, rgba(14, 14, 14, 0) 10%),
+        url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fvanjrblog.files.wordpress.com%2F2016%2F09%2Fthe-evolution-of-a-programmer.png%3Fw%3D1200%26h%3D720%26crop%3D1&f=1&nofb=1&ipt=c17f98c8a0bcaf04f6366a47162272ee140595172c3f8fbfff0f5a8d4fe2c81b&ipo=images');
+    background-size: 700px auto;
+    /* Adjusts the size of the image and gradient */
+    background-position: center;
+    background-position-y: 30%;
+    background-repeat: no-repeat;
+}
+
+#meaning {
+    background-image: linear-gradient(to left, rgba(14, 14, 14, 1) 0%, rgba(14, 14, 14, 0) 20%),
+        linear-gradient(to right, rgba(14, 14, 14, 1) 0%, rgba(14, 14, 14, 0) 20%),
+        url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ft4.ftcdn.net%2Fjpg%2F06%2F17%2F22%2F05%2F360_F_617220542_RSgQ6TUVLl0I3RTBRP9xAXfhJiFu1bio.jpg&f=1&nofb=1&ipt=1fe2dcff65190106cf8ccb0f3e9b9938a3732e9bbd2a3e519d3a256f5e8f3282&ipo=images');
+    background-size: 50%;
+    background-position: center;
+    background-position-y: 50%;
+    background-repeat: no-repeat;
+}
+
+#future {
+    background-image:
+    linear-gradient(to left, rgba(14, 14, 14, 1) 0%, rgba(14, 14, 14, 0) 20%),
+    linear-gradient(to right, rgba(14, 14, 14, 1) 0%, rgba(14, 14, 14, 0) 20%),
+    url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fc.wallhere.com%2Fphotos%2Ffa%2F94%2Fscience_fiction_people_planet_digital_art_futuristic_city-223829.jpg!d&f=1&nofb=1&ipt=49445301ca1aff0ecb9f0ef316bb42079cd0ad57d77ad7a9d79acd9c85058a38&ipo=images');
+    background-size: cover;
+    background-position: center;
+}
+
+#conclusion {
+    background-image:
+        linear-gradient(to left, rgba(14, 14, 14, 1) 0%, rgba(14, 14, 14, 0) 20%),
+        linear-gradient(to right, rgba(14, 14, 14, 1) 0%, rgba(14, 14, 14, 0) 20%),
+        url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimg.freepik.com%2Fpremium-photo%2Fopen-fairytale-book-with-magical-autumn-landscape-foggy-trees-horizon-beautiful-natural_817921-1577.jpg&f=1&nofb=1&ipt=fb5fb47674ee82521bbd2ba0d5cdeeea1ac71f9671d805ed0d0d9925cc1f1412&ipo=images');
+    background-size: 600px auto;
+    background-position: center;
+    background-position-y: 50%;
+    background-repeat: no-repeat;
+}
+
+/* Overlay styles for better text readability */
+.explanation::before {
+    content: "";
+    /* Empty content for the overlay */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.40);
+    /* Black overlay with 50% opacity */
+    z-index: 1;
+    /* Place overlay above background */
+}
+
+.explanation div {
+    text-align: left;
+    /* Align text to the left */
+    margin-top: 10px;
+    /* Space above the text */
+    position: relative;
+    /* Positioning for text layering */
+    z-index: 2;
+    /* Place text above the overlay */
+}
+
+.explanation p {
+    text-align: center;
+}
+
+.explanation strong {
+    color: #ffd700;
+    /* Gold for important points */
+}
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 1.2em;
+    color: #cccccc;
+    /* Lighter gray for footer */
+}

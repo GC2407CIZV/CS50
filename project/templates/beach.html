@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Beach</title>
+        <link rel="stylesheet" href="/static/css/beach.css">
+        <link href="/static/images/icons/beach.png" rel="icon">
+
+    </head>
+
+    <body>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="/static/images/beach/0.jpg" alt="Picture 1" onclick="openLightbox(this.src)">
+            </div>
+            <div class="gallery-item">
+                <img src="/static/images/beach/1.jpg" alt="Picture 2" onclick="openLightbox(this.src)">
+            </div>
+            <div class="gallery-item">
+                <img src="/static/images/beach/2.jpg" alt="Picture 3" onclick="openLightbox(this.src)">
+            </div>
+            <div class="gallery-item">
+                <img src="/static/images/beach/3.jpg" alt="Picture 4" onclick="openLightbox(this.src)">
+            </div>
+            <div class="gallery-item">
+                <img src="/static/images/beach/4.jpg" alt="Picture 5" onclick="openLightbox(this.src)">
+            </div>
+            <div class="gallery-item">
+                <img src="/static/images/beach/5.jpg" alt="Picture 6" onclick="openLightbox(this.src)">
+            </div>
+            <div class="gallery-item">
+                <img src="/static/images/beach/6.jpg" alt="Picture 7" onclick="openLightbox(this.src)">
+            </div>
+            <div class="gallery-item">
+                <img src="/static/images/beach/7.png" alt="Picture 8" onclick="openLightbox(this.src)">
+            </div>
+            <div class="gallery-item">
+                <img src="/static/images/beach/8.jpg" alt="Picture 9" onclick="openLightbox(this.src)">
+            </div>
+            <div class="gallery-item">
+                <img src="/static/images/beach/9.jpg" alt="Picture 10" onclick="openLightbox(this.src)">
+            </div>
+            <div class="gallery-item">
+                <img src="/static/images/beach/10.jpg" alt="Picture 11" onclick="openLightbox(this.src)">
+            </div>
+            <div class="gallery-item">
+                <img src="/static/images/beach/11.png" alt="Picture 12" onclick="openLightbox(this.src)">
+            </div>
+            <div class="gallery-item">
+                <img src="/static/images/beach/12.png" alt="Picture 13" onclick="openLightbox(this.src)">
+            </div>
+            <div class="gallery-item">
+                <img src="/static/images/beach/13.jpg" alt="Picture 14" onclick="openLightbox(this.src)">
+            </div>
+            <div class="gallery-item">
+                <img src="/static/images/beach/14.jpg" alt="Picture 15" onclick="openLightbox(this.src)">
+            </div>
+            <div class="gallery-item">
+                <img src="/static/images/beach/15.jpg" alt="Picture 16" onclick="openLightbox(this.src)">
+            </div>
+            <div class="gallery-item">
+                <img src="/static/images/beach/16.jpg" alt="Picture 17" onclick="openLightbox(this.src)">
+            </div>
+            <div class="gallery-item">
+                <img src="/static/images/beach/17.jpg" alt="Picture 18" onclick="openLightbox(this.src)">
+            </div>
+            <div class="gallery-item">
+                <img src="/static/images/beach/18.jpg" alt="Picture 19" onclick="openLightbox(this.src)">
+            </div>
+            <div class="gallery-item">
+                <img src="/static/images/beach/19.png" alt="Picture 20" onclick="openLightbox(this.src)">
+            </div>
+        </div>
+
+        <!-- Lightbox Container -->
+        <div class="lightbox" id="lightbox" style="display:none;">
+            <button class="close" onclick="closeLightbox()">&times;</button>
+            <img id="lightbox-img" class="lightbox-img" style="display:none;" />
+            <video id="lightbox-video" controls style="display:none;"></video>
+            <button class="prev" id="prev-btn">&#10094;</button>
+            <button class="next" id="next-btn">&#10095;</button>
+        </div>
+        <script src="/static/script.js"></script>
+    </body>
+
+</html>

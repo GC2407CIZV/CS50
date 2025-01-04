@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Endgame</title>
+        <link rel="stylesheet" href="/static/css/endgame.css">
+        <link href="/static/images/icons/4.png" rel="icon">
+    </head>
+
+    <body>
+        <canvas id="fireworks"></canvas>
+        <div class="title">
+            <h1 id="congrats-text">🎉 Congratulations, "{{username}}" ! 🎉</h1>
+            {% if player_rank == 1 %}
+                <img src="/static/images/icons/1.png" alt="First Place Shield" class="rank-icon">
+            {% elif player_rank == 2 %}
+                <img src="/static/images/icons/2.png" alt="Second Place Shield" class="rank-icon">
+            {% elif player_rank == 3 %}
+                <img src="/static/images/icons/3.png" alt="Third Place Shield" class="rank-icon">
+            {% endif %}
+            <h2 id="finish-rank">You finished in <strong><span id="player-rank">{{ player_rank }}</span> place!</strong></h2>
+            <h2>You’ve successfully pieced together all the clues and uncovered the mystery! <br> Your journey is a testament to your determination and cleverness.
+                <br><br>Remember, <strong>"Life is an adventure, be the hero of your story."</strong>
+            </h2>
+            <form action="/endgame" method="post">
+                <label color="white" for="player_name">Step into glory! Immortalize your name among the legends!</label><br>
+                <input type="text" name="player_name" id="player_name" placeholder="What's your name?" required>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+        <div class="footer">
+            <h2>Created by Gregory Charles, with inspiration and support from AI, community forums, w3schools, and CS50.</h2>
+        </div>
+
+        <script>
+            // Function to add ordinal suffix to a rank number
+            function getOrdinalSuffix(rank) {
+                const j = rank % 10;
+                const k = rank % 100;
+
+                if (j === 1 && k !== 11) {
+                    return `${rank}st`;
+                } else if (j === 2 && k !== 12) {
+                    return `${rank}nd`;
+                } else if (j === 3 && k !== 13) {
+                    return `${rank}rd`;
+                } else {
+                    return `${rank}th`;
+                }
+            }
+
+            // Function to display the player's rank with the ordinal suffix
+            function displayCongrats(rank) {
+                const playerRankElement = document.getElementById('player-rank');
+                if (playerRankElement) {
+                    playerRankElement.textContent = (rank > 0) ? getOrdinalSuffix(rank) : "No rank yet"; // Adjusted logic
+                }
+            }
+
+            // Assuming you retrieve the player's rank from the server and pass it to this script
+            let playerRank = parseInt("{{ player_rank }}", 10); // Ensure rank is a number
+
+            // If playerRank is NaN or less than 1, default to 0 (no rank)
+            if (isNaN(playerRank) || playerRank < 1) {
+                playerRank = 0; // Default handling for invalid rank
+            }
+
+            displayCongrats(playerRank); // Display the rank with the correct ordinal suffix
+
+
+            const canvas = document.getElementById('fireworks');
+            const ctx = canvas.getContext('2d');
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+
+            class Firework {
+                constructor() {
+                    this.x = Math.random() * canvas.width;
+                    this.y = canvas.height;
+                    this.targetY = Math.random() * (canvas.height * 0.7);
+                    this.color = this.getRandomColor();
+                    this.radius = 1.5;
+                    this.speed = Math.random() * 2 + 2;
+                    this.exploded = false;
+                    this.particles = [];
+                }
+
+                getRandomColor() {
+                    const colors = [
+                        '#FF0000', // Red
+                        '#FF7F00', // Orange
+                        '#FFFF00', // Yellow
+                        '#00FF00', // Green
+                        '#0000FF', // Blue
+                        '#4B0082', // Indigo
+                        '#9400D3', // Violet
+                        '#FFFFFF', // White
+                        '#FFD700', // Gold
+                        '#FF69B4' // Pink
+                    ];
+                    return colors[Math.floor(Math.random() * colors.length)];
+                }
+
+                launch() {
+                    if (this.y > this.targetY) {
+                        this.y -= this.speed;
+                        this.drawRocket();
+                    } else if (!this.exploded) {
+                        this.explode();
+                    }
+                }
+
+                drawRocket() {
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                    ctx.fillStyle = this.color;
+                    ctx.fill();
+                }
+
+                explode() {
+                    this.exploded = true; // Mark as exploded
+                    const particleCount = 100; // Number of particles
+                    for (let i = 0; i < particleCount; i++) {
+                        this.particles.push(new Particle(this.x, this.y, this.color));
+                    }
+                }
+
+                update() {
+                    this.launch();
+                    if (this.exploded) {
+                        this.particles.forEach((particle, index) => {
+                            particle.update();
+                            if (particle.lifespan <= 0) {
+                                this.particles.splice(index, 1);
+                            }
+                        });
+                    }
+                }
+            }
+
+            class Particle {
+                constructor(x, y, color) {
+                    this.x = x;
+                    this.y = y;
+                    this.speedX = (Math.random() - 0.5) * 5; // Reduced speed for realism
+                    this.speedY = (Math.random() - 0.5) * 5;
+                    this.gravity = 0.05; // Gravity to pull particles down
+                    this.lifespan = 80; // Lifespan of particles
+                    this.color = color;
+                    this.alpha = 1;
+                    this.size = Math.random() * 1 + 0.30; // Smaller particles (0.5 to 1.5)
+                    this.trail = [];
+                }
+
+                update() {
+                    this.speedY += this.gravity; // Apply gravity
+                    this.x += this.speedX; // Move horizontally
+                    this.y += this.speedY; // Move vertically
+                    this.alpha = Math.max(0, this.alpha - 0.025); // Gradually decrease alpha
+                    this.lifespan--;
+
+                    // Trail effect
+                    this.trail.push({
+                        x: this.x,
+                        y: this.y
+                    });
+                    if (this.trail.length > 5) this.trail.shift();
+
+                    this.draw();
+                }
+
+                draw() {
+                    ctx.save();
+                    ctx.globalAlpha = this.alpha; // Set alpha for current particle
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                    ctx.fillStyle = this.color;
+                    ctx.fill();
+                    ctx.restore();
+
+                    // Draw trail
+                    for (let i = 0; i < this.trail.length; i++) {
+                        ctx.beginPath();
+                        ctx.arc(this.trail[i].x, this.trail[i].y, this.size * (i / 5), 0, Math.PI * 2);
+                        ctx.fillStyle = this.color;
+                        ctx.fill();
+                    }
+                }
+            }
+
+            const fireworks = [];
+
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                fireworks.forEach((firework, index) => {
+                    firework.update();
+                    if (firework.particles.length === 0 && firework.exploded) {
+                        fireworks.splice(index, 1); // Remove firework after explosion
+                    }
+                });
+                requestAnimationFrame(animate);
+            }
+
+
+            setInterval(() => {
+                fireworks.push(new Firework());
+            }, 800); // Launch new fireworks every second
+
+            animate();
+        </script>
+    </body>
+
+</html>

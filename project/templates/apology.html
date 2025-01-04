@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Apology
+{% endblock %}
+
+{% block main %}
+    <link rel="stylesheet" href="/static/css/dashboard.css">
+<!-- https://memegen.link/ -->
+<!-- https://knowyourmeme.com/memes/grumpy-cat -->
+    <img alt="{{ top }}" class="border img-fluid" src="https://api.memegen.link/images/custom/{{ top | urlencode }}/{{ bottom | urlencode }}.jpg?background=https://i.imgur.com/Son2oyb.png" title="{{ top }}">
+{% endblock %}

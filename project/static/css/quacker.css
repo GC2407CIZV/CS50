@@ -1,0 +1,192 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e6ecf0;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background-color: #1DA1F2;
+    color: white;
+    padding: 5px;
+    text-align: center;
+    font-size: 35px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+}
+
+.container {
+    display: flex;
+    justify-content: left;
+    margin-top: 60px;
+}
+
+.sidebar,
+.main-content,
+.right-sidebar {
+    background-color: white;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 8px;
+    top: 60px;
+
+}
+
+.sidebar {
+    width: 20%;
+    left: 0;
+    height: 100%;
+    padding-top: 20px;
+    border-right: 1px solid #e1e8ed;
+
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 25px 0;
+    font-size: 18px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.sidebar ul li:hover {
+    background-color: #e8f5fe;
+    color: #1DA1F2;
+    border-radius: 30px;
+}
+
+.sidebar ul li img {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.right-sidebar {
+    width: 20%;
+    right: 0;
+    height: 100%;
+    padding-top: 15px;
+    border-left: 1px solid #e1e8ed;
+    position: fixed;
+    overflow-y: auto;
+}
+
+.right-sidebar .trends {
+    background-color: #f5f8fa;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 60px;
+    border: 1px solid #e1e8ed;
+}
+
+.right-sidebar h2 {
+    margin-bottom: 10px;
+}
+
+.trend-content:last-child {
+    border-bottom: none;
+}
+
+.trend-image {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+
+.quack .user span {
+    color: #657786;
+    font-weight: normal;
+}
+
+.main-content {
+    width: 50%;
+    margin-left: 0.75%;
+}
+
+.quack-box {
+    border: 1px solid #e1e8ed;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: white;
+}
+
+.quack-box textarea {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    resize: none;
+    font-size: 16px;
+    outline: none;
+}
+
+.quack-box button {
+    background-color: #1DA1F2;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.quack {
+    border-bottom: 1px solid #e1e8ed;
+    padding: 15px;
+    display: flex;
+    background-color: white;
+}
+
+.profile-picture {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.quack-content {
+    width: 100%;
+}
+
+.quack .user {
+    font-weight: bold;
+    color: #1DA1F2;
+}
+
+.quack .content {
+    margin-top: 5px;
+    line-height: 1.5;
+}
+
+.quack .quack-image {
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 8px;
+}
+
+.quack-icons {
+    margin-top: 10px;
+    margin-left: 20px;
+    display: flex;
+    justify-content: space-between;
+    width: 625px;
+
+}
+
+.quack-icons img {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}

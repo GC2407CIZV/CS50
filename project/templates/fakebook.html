@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Fakebook</title>
+        <link href="{{ url_for('static', filename='images/fakebook/fakebook.png') }}" rel="icon">
+        <link rel="stylesheet" href="/static/css/fakebook.css">
+        <script src="/static/script.js" defer></script>
+
+
+    </head>
+
+    <body>
+        <div class="header">
+            Fakebook
+        </div>
+
+        <div class="container">
+            <!-- Sidebar Section -->
+            <div class="sidebar">
+                <div class="profile-info">
+                    <img src="{{ url_for('static', filename='images/fakebook/profile.jpg') }}" alt="Profile Picture" class="profile-pic">
+                    <div>
+                        <h2>Greg Charles</h2>
+                        <p>Welcome to Fakebook</p>
+                    </div>
+                </div>
+                <hr>
+                <p><strong>Friends</strong></p>
+                <ul class="friends-list">
+                    <li><a href="https://www.facebook.com/hseas"><img src="/static/images/fakebook/john.jpg" alt="John Harvard"></a> <strong>John Harvard</strong></li>
+                    <li><a href="https://www.facebook.com/dmalan"><img src="/static/images/fakebook/david.jpg" alt="David Malan"></a> <strong>David Malan</strong></li>
+                    <li><a href="https://www.facebook.com/profile.php?id=100066384155710"><img src="/static/images/fakebook/carter.jpg" alt="Carter Zenke"></a> <strong>Carter Zenke</strong></li>
+                    <li><a href="https://www.facebook.com/authordouglloyd"><img src="/static/images/fakebook/doug.png" alt="Doug Lloyd"></a> <strong>Doug Lloyd</strong></li>
+                    <li><a href="https://www.facebook.com/BrianYu28/"><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fyale.learningu.org%2Fmedia%2Fuploaded%2Fbio_pictures%2F19_03%2Fprofile2017_2.jpg&f=1&nofb=1&ipt=a603b9bd0d0b5d19141285c4b3590c55e11a329f340295231e8c319f441a861c&ipo=images" alt="Brian Yu"></a> <strong>Brian Yu</strong></li>
+                    <li><a href="https://www.facebook.com/julia.zhukovets.5"><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcs50.harvard.edu%2Fcollege%2F2023%2Ffall%2Fstaff%2Fyuliia_zhukovets.jpg&f=1&nofb=1&ipt=243923b3d53688d6d2cae9efa52851b8341e1052d1dca35f4277c0fffba6ff0f&ipo=images" alt="Yuliia Zhukovets"></a> <strong>Yuliia Zhukovets</strong></li>
+                    <li><img src="/static/images/icons/seemore.png" alt="See more"> <strong>See more</strong></li>
+                </ul>
+                <hr>
+                <div class="sidebar-links">
+                    <span class="icon"><a href="#"><img src="/static/images/icons/groups.png" alt="Groups"> Groups</a></span>
+                    <span class="icon"><a href="#"><img src="/static/images/icons/video.png" alt="Video"> Video</a></span>
+                    <span class="icon"><a href="#"><img src="/static/images/icons/marketplace.png" alt="Marketplace"> Marketplace</a></span>
+                    <span class="icon"><a href="#"><img src="/static/images/icons/feeds.png" alt="Feeds"> Feeds</a></span>
+                    <span class="icon"><a href="#"><img src="/static/images/icons/events.png" alt="Events"> Events</a></span>
+                    <span class="icon"><a href="#"><img src="/static/images/icons/seemore.png" alt="See more"> See more</a></span>
+                </div>
+            </div>
+
+            <!-- Feed Section -->
+            <div class="feed">
+                <div id="post1" class="post">
+                    <img src="{{ url_for('static', filename='images/fakebook/profile.jpg') }}" alt="Profile Picture" class="post-profile-pic">
+                    <div class="post-content">
+                        <p><strong>Greg</strong> <span class="post-time"> 1 day ago</span></p>
+                        <p>Had a "Quacktastic!" time at the beach today!</p>
+                        <img src="{{ url_for('static', filename='images/fakebook/0.jpg') }}" alt="Beach Photo">
+                        <div class="post-actions">
+                            <button class="action-btn">Like</button>
+                            <button class="action-btn">Comment</button>
+                            <button class="action-btn">Share</button>
+                        </div>
+                        <div class="comments">
+                            <div class="comment">
+                                <p><strong>Brian Yu</strong> <span class="comment-time">1 day ago</span></p>
+                                <p>I wish I could have been there 😔</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="post2" class="post">
+                    <img src="{{ url_for('static', filename='images/fakebook/john.jpg') }}" alt="Profile Picture" class="post-profile-pic">
+                    <div class="post-content">
+                        <p><strong>John Harvard</strong> <span class="post-time">2 days ago</span></p>
+                        <p>Victory never tasted this sweet! Finally reclaimed what’s ours — and we added a little surprise for MIT! 😂🦫 #HarvardWins #SorryNotSorry</p>
+                        <img src="{{ url_for('static', filename='images/fakebook/event.png') }}" alt="On his way">
+                        <div class="post-actions">
+                            <button class="action-btn">Like (12)</button>
+                            <button class="action-btn">Comment</button>
+                            <button class="action-btn">Share</button>
+                        </div>
+                        <div class="comments">
+                            <div class="comment">
+                                <p><strong>Carter Zenke</strong> <span class="comment-time">1 day ago</span></p>
+                                <p>Epic win! 🦫</p>
+                            </div>
+                            <div class="comment">
+                                <p><strong>Brian Yu</strong> <span class="comment-time">1 day ago</span></p>
+                                <p>Way to go, John! Love the victory vibe! 🥳 Can't wait to see that surprise! #HarvardWins</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="post3" class="post">
+                    <img src="{{ url_for('static', filename='images/fakebook/david.jpg') }}" alt="Profile Picture" class="post-profile-pic">
+                    <div class="post-content">
+                        <p><strong>David Malan</strong> <span class="post-time">6 days ago</span></p>
+                        <p>🦆 <strong>Quack-tastic Joke of the Day!</strong> 🦆</p>
+                        <p>Why do ducks have feathers? ー To cover their butt quacks! 🦆💨</p>
+                        <div class="post-actions">
+                            <button class="action-btn">Like (5)</button>
+                            <button class="action-btn">Comment</button>
+                            <button class="action-btn">Share</button>
+                        </div>
+                        <div class="comments">
+                            <div class="comment">
+                                <p><strong>John Harvard</strong> <span class="comment-time">3 days ago</span></p>
+                                <p>Always QuacksMeUp! 😂🦆</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="post4" class="post">
+                    <img src="{{ url_for('static', filename='images/fakebook/doug.png') }}" alt="Profile Picture" class="post-profile-pic">
+                    <div class="post-content">
+                        <p><strong>Doug Lloyd</strong> <span class="post-time">2 weeks ago</span></p>
+                        <p>🚀✈️ Thrilled to share that I’ve been flying my self-built RV-10! The journey of building it was challenging, but every flight makes it all worth it. Here’s to more adventures in the sky!</p>
+                        <p>🛫 #Homebuilt #RV10 #PilotLife</p>
+                        <img class="photo" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.rXj_ED3Gp3Ic8mWKCrQ40wHaHa%26pid%3DApi&f=1&ipt=6c60930eedf909543a7f1fb9e11aa3981d88bd09d28cd14946f4cabdef32dd82&ipo=images" alt="Food Photo">
+                        <div class="post-actions">
+                            <button class="action-btn">Like (123)</button>
+                            <button class="action-btn">Comment</button>
+                            <button class="action-btn">Share</button>
+                        </div>
+                        <div class="comments">
+                            <div class="comment">
+                                <p><strong>Greg Charles</strong> <span class="comment-time">13 days ago</span></p>
+                                <p>That’s amazing! 🛩️</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="post5" class="post">
+                    <img src="{{ url_for('static', filename='images/fakebook/profile.jpg') }}" alt="Greg Charles" class="post-profile-pic">
+                    <div class="post-content">
+                        <p><strong>Greg Charles</strong> <span class="post-time">21 August</span></p>
+                        <p>Life is an adventure. Be the hero of your story." 🌍💫</p>
+                        <p>Embrace the journey, overcome the challenges, and write your own legend.</p>
+                        <p>🚀💪 #AdventureAwaits #onlyliveonce #HeroInYou #LiveBoldly</p>
+                        <video class="video" id=Intro controls autoplay muted>
+                            <source src="/static/images/fakebook/Hobbies.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="post-actions">
+                            <button class="action-btn">Like (6)</button>
+                            <button class="action-btn">Comment</button>
+                            <button class="action-btn">Share</button>
+                        </div>
+                        <div class="comments">
+                            <div class="comment">
+                                <p><strong>Yuliia Zhukovets</strong> <span class="comment-time">13 days ago</span></p>
+                                <p>Wow, what an epic video! 🌍✨ Your adventures are so inspiring—can’t believe you did all that! 🚀💦 Can't wait for your next trip!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ads Section -->
+            <div id="ads" class="ads">
+                <p><strong>Sponsored</strong></p>
+                <div class="ad">
+                    <p>Ad: edX ― Unlock your potential.</p>
+                    <a href="https://www.edx.org/"><img src="{{ url_for('static', filename='images/fakebook/ad0.png') }}" alt="edX"></a>
+                </div>
+                <div class="ad">
+                    <p>Ad: Buy the best vacation packages!</p>
+                    <a href="https://www.wetravel.com/"> <img src="{{ url_for('static', filename='images/fakebook/ad1.png') }}" alt="We Travel"></a>
+                </div>
+                <div class="ad">
+                    <p>Ad: Maccy D ー Big. Beefy. Bliss.</p>
+                    <a href="https://www.mcdonalds.com/"><img src="{{ url_for('static', filename='images/fakebook/ad2.jpg') }}" alt="MaccyDy"></a>
+                </div>
+                <div class="ad">
+                    <p>Ad: AMAZON ー From A to Z.</p>
+                    <a href="https://www.amazon.com/"><img src="{{ url_for('static', filename='images/fakebook/ad3.jpg') }}" alt="Amazon"></a>
+                </div>
+                <div class="ad">
+                    <p>Ad: Harvard ー Mission, Vision & History.</p>
+                    <a href="https://www.harvard.edu/"><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fblog.logomyway.com%2Fwp-content%2Fuploads%2F2020%2F11%2FHarvard-logo-design.jpg&f=1&nofb=1&ipt=bce55e6f5891d9a0c05bdbf962c8dd65f983100babca3e18658a0b86a5e687df&ipo=images" alt="Harvard"></a>
+                </div>
+                <div class="ad">
+                    <p>Ad: MIT ー Mens et manus.</p>
+                    <a href="https://web.mit.edu/"><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fadmissionscholarships.com%2Fwp-content%2Fuploads%2F2018%2F11%2FMassachusetts-Institute-of-Technology-MIT-Admission-Scholarships-1.jpg&f=1&nofb=1&ipt=032feb6542facf7dc782fc629d2832ca41d9304b2f63c7f900964217afa58be6&ipo=images" alt="MIT"></a>
+                </div>
+                <div class="ad">
+                    <p>Ad: Durex ー For better sex.</p>
+                    <a href="https://www.durex.com/"><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2Fdd%2F6d%2Feb%2Fdd6deb5ca414212bfd1f1bbb110de0a4.jpg&f=1&nofb=1&ipt=464598a552c8dcf7794f365e7a6b224e989fac7f9ca17d1dab5d252dcefeb80a&ipo=images" alt="Durex"></a>
+                </div>
+
+            </div>
+            <!-- Chat Box -->
+            <div id="chatBox" class="chat-box hidden">
+                <div class="chat-header">
+                    David
+                    <button class="minimize-btn" onclick="toggleChatBox()">ー</button>
+                </div>
+                <div class="chat-body">
+                    <!-- Chat messages will be inserted here -->
+                </div>
+                <!-- Typing Indicator Section -->
+                <div class="typing-indicator" id="typing-indicator" style="display: none;">
+                    <p><em>Typing...</em></p>
+                </div>
+
+                <div class="chat-footer">
+                    <input type="text" class="chat-input" placeholder="Type a message...">
+                    <button class="chat-send" onclick="sendMessage()" type="button">Send</button>
+                </div>
+            </div>
+
+            <!-- Chat Button -->
+            <button id="chatButton" class="chat-button" data-source="fakebook" onclick="toggleChatBox()">Chat</button>
+        </div>
+        <script>
+            // Video autoplay based on visibility
+            document.addEventListener("DOMContentLoaded", () => {
+                const video = document.getElementById('Intro');
+                const observer = new IntersectionObserver(entries => {
+                    entries.forEach(entry => entry.isIntersecting ? video.play().catch(console.error) : video.pause());
+                }, {
+                    threshold: 0.8
+                });
+                observer.observe(video);
+            });
+        </script>
+        <div class="footer">
+            &copy; 2024 Fakebook
+        </div>
+
+    </body>
+
+</html>

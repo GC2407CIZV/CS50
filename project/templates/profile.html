@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Profile
+{% endblock %}
+
+{% block main %}
+<link rel="stylesheet" href="/static/css/dashboard.css">
+    <form action="/profile" method="post">
+
+        <div class="mb-3">
+            <input autofocus class="form-control mx-auto w-auto" id="new-username" name="new-username" placeholder="New Username" type="text">
+        </div>
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" id="new-password" name="new-password" placeholder="New Password" type="password">
+        </div>
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" name="confirmation" placeholder="Confirm Password" type="password">
+        </div>
+        <button type="submit">Update Profile</button>
+    </form>
+{% endblock %}

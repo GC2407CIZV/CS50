@@ -1,0 +1,220 @@
+/* Remove any existing borders from the navbar */
+.navbar {
+    border: none; /* Remove all borders */
+    position: relative; /* Ensure positioning for pseudo-elements */
+    background-color: #1c1c1c !important;
+}
+
+/* Add a bottom border */
+.navbar::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px; /* Adjust thickness here */
+    background-color: #00ff00; /* Set the color for the bottom border */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+}
+
+.navbar-nav .nav-link {
+    color: #00ff00; /* Ensure the nav items are green */
+}
+/* Hover effect for nav items */
+.navbar-nav .nav-link:hover {
+    color: #f5b82e; /* Change to a different color on hover */
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.5); /* Add text shadow */
+}
+
+.navbar-toggler {
+    border-color: #00ff00; /* Green border for the toggler */
+}
+/* Size for brand */
+nav .navbar-brand {
+    font-size: 1.5rem;
+}
+
+/* Colors for brand */
+nav .navbar-brand .blue {
+    color: #537fbe;
+}
+
+nav .navbar-brand .red {
+    color: #ea433b;
+}
+
+nav .navbar-brand .yellow {
+    color: #f5b82e;
+}
+
+nav .navbar-brand .green {
+    color: #00ff00;
+}
+
+body {
+    background-color: #1c1c1c;
+    font-family: 'Arial', sans-serif;
+    color: white;
+    text-align: center;
+}
+
+.dashboard-container {
+    margin: 0px auto;
+    width: 70%;
+    border: 2px solid #00ff00;
+    padding: 20px;
+    background-color: #2e2e2e;
+    border-radius: 10px;
+}
+
+h1 {
+    color: #00ff00;
+    font-size: 2.5em;
+}
+
+/* Clue section styling */
+.clues {
+    margin-top: 30px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #1c1c1c;
+    background-color: #00ff00;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #009900;
+}
+
+/* Enhance table layout */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+    background-color: #2e2e2e;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+thead {
+    background-color: #00ff00;
+    color: #1c1c1c;
+}
+
+thead th {
+    padding: 12px;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    border: none;
+}
+
+tbody tr {
+    border-bottom: 1px solid #00ff00;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #3c3c3c;
+}
+
+tbody tr:hover {
+    background-color: #00ff00;
+    color: #1c1c1c;
+    cursor: pointer;
+}
+
+tbody td {
+    padding: 12px;
+    font-size: 1rem;
+    color: white;
+    text-align: center;
+}
+
+/* New ranking column style */
+td:first-child {
+    width: 10%;
+    /* Set width for ranking column */
+    border-left-style: solid;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+td:last-child {
+    border-right-style: solid;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+/* Styling for empty table */
+table.empty-table tbody::before {
+    content: "No players found";
+    display: block;
+    padding: 20px;
+    font-size: 1.2rem;
+    text-align: center;
+    color: #ff0000;
+    background-color: #3c3c3c;
+    border-radius: 10px;
+}
+
+
+/* Responsive styling for mobile screens */
+@media (max-width: 480px) {
+    table {
+        font-size: 0.8rem;
+    }
+
+    thead th {
+        padding: 8px;
+    }
+
+    tbody td {
+        padding: 8px;
+    }
+}
+
+/* Icons section */
+.icons img {
+    width: auto;
+    height: 80px;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    padding: 20px;
+}
+
+.intro {
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 50, 0, 0.1);
+}
+
+.section {
+    margin-bottom: 20px;
+}
+
+.hiddenImage {
+    display: none;
+    /* Initially hidden */
+}
+
+.highlight {
+    background-color: #00B300;
+    /* Or any color you prefer */
+    font-weight: bold;
+    /* Optional: make the text bold */
+
+}
+
+table tbody tr.highlight td {
+    color: black;
+    /* Or any preferred color */
+}

@@ -1,0 +1,197 @@
+/* endgame_copy.css */
+
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Full screen for the canvas */
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to top, #000, #111);
+    /* Dark background for fireworks */
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+    /* Prevent scroll bars */
+}
+
+/* Canvas styles */
+#fireworks {
+    position: absolute;
+    /* Place behind other elements */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    /* Send canvas to back */
+}
+
+/* Title styles */
+.title {
+    text-align: center;
+    padding: 20px;
+    z-index: 1;
+    /* Bring title to the front */
+}
+
+#congrats-text {
+    font-size: 3em;
+    /* Large title size */
+    margin-bottom: 20px;
+    background: linear-gradient(90deg, #FFD700, #FF4500, #FF1493);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: fadeIn 3s ease;
+    /* Animation for text appearance */
+}
+
+#congrats-text1 {
+    font-size: 3em;
+    /* Large title size */
+    margin-bottom: 20px;
+    background: linear-gradient(90deg, #FFD700, #FFEC8B, #F0E68C);
+    /* Gold gradient */
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: fadeIn 3s ease;
+    /* Animation for text appearance */
+}
+
+#congrats-text2 {
+    font-size: 3em;
+    /* Large title size */
+    margin-bottom: 20px;
+    background: linear-gradient(90deg, #B0C4DE, #4682B4, #708090);
+    /* Silver gradient */
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: fadeIn 3s ease;
+    /* Animation for text appearance */
+}
+
+#congrats-text3 {
+    font-size: 3em;
+    /* Large title size */
+    margin-bottom: 20px;
+    background: linear-gradient(90deg, #CD7F32, #B87333, #8C6032);
+    /* Bronze gradient */
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: fadeIn 3s ease;
+    /* Animation for text appearance */
+}
+
+.rank-icon {
+    width: 150px;
+    height: auto;
+    margin: 5px 0;
+    animation: pulse 2s infinite;
+}
+
+/* Pulse animation for icon */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+#finish-rank {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+
+/* First, Second, Third Place Text */
+#finish-rank1,
+#winner {
+    color: #FFD700;
+    /* Gold */
+}
+
+#finish-rank2,
+#second {
+    color: #4682B4;
+    /* Steel blue */
+}
+
+#finish-rank3,
+#third {
+    color: #CD7F32;
+    /* Bronze */
+}
+
+/* General heading styles */
+h2 {
+    font-size: 1.2em;
+    line-height: 1.5;
+    /* Better spacing between lines */
+    margin: 10px 0;
+    /* Margin for separation */
+}
+
+/* Emphasis on strong text */
+strong {
+    color: #FFD700;
+    /* Gold color for emphasis */
+}
+
+h2 span#player-rank {
+    color: #f44336;
+    /* Red color for player rank */
+    font-size: 1.8rem;
+}
+
+/* Footer styles */
+.footer {
+    position: fixed; /* or use absolute if you want it based on content */
+    bottom: 0; /* Stick to the bottom */
+    left: 0; /* Align left */
+    right: 0; /* Align right */
+    text-align: center; /* Center the text */
+    width: 100%; /* Full width */
+    padding: 10px; /* Add some padding */
+    z-index: 1; /* Bring footer to the front */
+}
+
+
+.footer h2 {
+    font-size: 1em;
+    color: #ccc;
+    /* Lighter color for footer */
+}
+
+/* Keyframes for fade-in effect */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.rank-icon {
+    width: auto;
+    height: 120px;
+}

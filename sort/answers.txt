@@ -1,0 +1,13 @@
+sort1 uses: Bubble sort
+
+How do you know?: It takes longer for an unsorted list than a sorted. 5.73ms - 0.68 ms
+                Worst case n^2 and bast case n
+
+sort2 uses: Merge sort
+
+How do you know?: It took roughly same amount of time for sorting a sorted as a random list. 0.597ms - 0.663ms
+                Both worst case as best case it will take (n log n) = same time
+
+sort3 uses: Selection sort
+
+How do you know?: They sorted as unsorted list both take the same time and is long n^2 3.01ms - 2.29ms

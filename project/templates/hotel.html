@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Charles Hotel</title>
+        <link rel="stylesheet" href="/static/css/hotel.css">
+        <link href="/static/images/icons/hotel.png" rel="icon">
+        <script src="/static/script.js" defer></script>
+    </head>
+
+    <body>
+        <div class="heading-container">
+            <h1>Welcome to <strong>"CHARLES HOTEL"</strong></h1>
+        </div>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="/static/images/hotel/1.jpg" alt="Picture 1" onclick="openLightbox(this.src, 'image');">
+            </div>
+            <div class="gallery-item">
+                <img src="/static/images/hotel/2.jpg" alt="Picture 2" onclick="openLightbox(this.src, 'image');">
+            </div>
+            <div class="gallery-item">
+                <img src="/static/images/hotel/3.jpg" alt="Picture 3" onclick="openLightbox(this.src, 'image');">
+            </div>
+            <div class="gallery-item">
+                <img src="/static/images/hotel/4.jpg" alt="Picture 4" onclick="openLightbox(this.src, 'image');">
+            </div>
+            <div class="gallery-item">
+                <img src="/static/images/hotel/5.jpg" alt="Picture 5" onclick="openLightbox(this.src, 'image');">
+            </div>
+            <div class="gallery-item">
+                <img src="/static/images/hotel/6.jpg" alt="Picture 6" onclick="openLightbox(this.src, 'image');">
+            </div>
+            <div class="gallery-item">
+                <img src="/static/images/hotel/7.jpg" alt="Picture 7" onclick="openLightbox(this.src, 'image');">
+            </div>
+            <div class="gallery-item">
+                <img src="/static/images/hotel/8.jpg" alt="Picture 8" onclick="openLightbox(this.src, 'image');">
+            </div>
+            <div class="gallery-item">
+                <img src="/static/images/hotel/9.jpg" alt="Picture 9" onclick="openLightbox(this.src, 'image');">
+            </div>
+            <div class="gallery-item">
+                <img src="/static/images/hotel/10.jpg" alt="Picture 10" onclick="openLightbox(this.src, 'image');">
+            </div>
+            <div class="gallery-item">
+                <img src="/static/images/hotel/11.jpg" alt="Picture 11" onclick="openLightbox(this.src, 'image');">
+            </div>
+            <div class="gallery-item">
+                <img src="/static/images/hotel/12.jpg" alt="Picture 12" onclick="openLightbox(this.src, 'image');">
+            </div>
+            <div class="gallery-item">
+                <img src="/static/images/hotel/13.jpg" alt="Picture 13" onclick="openLightbox(this.src, 'image');">
+            </div>
+            <div class="gallery-item">
+                <img src="/static/images/hotel/14.jpg" alt="Picture 14" onclick="openLightbox(this.src, 'image');">
+            </div>
+            <div class="gallery-item">
+                <img src="/static/images/hotel/15.jpg" alt="Picture 15" onclick="openLightbox(this.src, 'image');">
+            </div>
+            <div class="gallery-item">
+                <img src="/static/images/hotel/16.jpg" alt="Picture 16" onclick="openLightbox(this.src, 'image');">
+            </div>
+            <div class="gallery-item">
+                <img src="/static/images/hotel/17.jpg" alt="Picture 17" onclick="openLightbox(this.src, 'image');">
+            </div>
+            <div class="gallery-item">
+                <img src="/static/images/hotel/18.jpg" alt="Picture 18" onclick="openLightbox(this.src, 'image');">
+            </div>
+            <div class="gallery-item">
+                <img src="/static/images/hotel/19.jpg" alt="Picture 19" onclick="openLightbox(this.src, 'image');">
+            </div>
+            <div class="gallery-item">
+                <img src="/static/images/hotel/20.jpg" alt="Picture 20" onclick="openLightbox(this.src, 'image');">
+            </div>
+            <div class="gallery-item">
+                <img src="/static/images/hotel/21.jpg" alt="Picture 21" onclick="openLightbox(this.src, 'image');">
+            </div>
+            <div id="clueImage_2" class="gallery-item {% if 3 in clue_ids %} hiddenImage {% else %} {% endif %}">
+                <img src="/static/images/hotel/22.png" alt="Picture 22" onclick="openLightbox(this.src, 'image');">
+            </div>
+            <div id="clueImage_1" class="gallery-item {% if 3 in clue_ids %} {% else %} hiddenImage {% endif %}">
+                <img src="/static/images/hotel/23.png" alt="Picture 23" onclick="openLightbox(this.src, 'image');">
+            </div>
+            <div id="clueImage_3" class="gallery-item {% if 12 in clue_ids %} {% else %} hiddenImage {% endif %}">
+                <img src="/static/images/hotel/24.png" alt="Picture 24" onclick="openLightbox(this.src, 'image');">
+            </div>
+            <div class="gallery-item">
+                <img src="/static/images/hotel/25.png" alt="Picture 25" onclick="openLightbox(this.src, 'image');">
+            </div>
+        </div>
+
+        <!-- Lightbox Container -->
+        <div class="lightbox" id="lightbox" style="display:none;">
+            <button class="close" onclick="closeLightbox()">&times;</button>
+            <img id="lightbox-img" class="lightbox-img" style="display:none;" />
+            <video id="lightbox-video" controls style="display:none;"></video>
+            <button class="prev" id="prev-btn">&#10094;</button>
+            <button class="next" id="next-btn">&#10095;</button>
+        </div>
+    </body>
+
+</html>

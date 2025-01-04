@@ -1,0 +1,154 @@
+{% extends "layout.html" %}
+
+{% block title %}
+
+    Register
+{% endblock %}
+
+{% block main %}
+    <link rel="stylesheet" href="/static/css/register.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fingerprintjs/3.3.0/fingerprint.min.js"></script>
+    </head>
+
+    <body>
+        <div class="dashboard-container">
+            <h2>Create Your Account</h2>
+            <br><h4>Join us and dive into the adventure! By registering, you’ll gain access to all features, including your personalized dashboard, clues, progress tracking, and much more.</h4>
+            <br> <h4>"Just a friendly reminder: you can only register <strong>once</strong>! So make it count—no second chances unless you have a time machine!"</h4>
+            <div>
+                <form action="/register" method="post">
+
+                    <div class="mb-3">
+                        <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="username" name="username" placeholder="e.g. user123" required type="text">
+                    </div>
+                    <div class="mb-3">
+                        <input class="form-control mx-auto w-auto" id="password" name="password" placeholder="Password" required type="password">
+                    </div>
+                    <div class="mb-3">
+                        <input class="form-control mx-auto w-auto" name="confirmation" placeholder="Confirm Password" required type="password">
+                    </div>
+                    <button class="button" type="submit">Register</button>
+                    <input type="hidden" id="fingerprint" name="fingerprint">
+                </form>
+            </div>
+            <br>
+            <div><strong>Need help?</strong>
+                <div class="popup" onclick="togglePopup(event, 'HelpPopup')">Contact Support
+                    <span class="popuptext" id="HelpPopup">
+                        <strong>Uh-oh… You’re trying to contact support? Well, good luck with that!</strong> 😅
+                        <p>We’d love to say our team is standing by to assist you, but they’re currently busy… doing absolutely nothing. That’s right—this support button? Pure decoration. But hey, you’ve come this far, so let’s make the most of it:</p>
+
+                        <ol>
+                            <li><strong>Step 0</strong>: Try turning your device off and on again. If that doesn’t work, try turning yourself off and on again (a quick nap usually helps).</li>
+                            <br>
+                            <li><strong>Step 1</strong>: Take a deep breath. Maybe the problem will fix itself. If not, at least you’ve practiced some mindful quacking.</li>
+                            <br>
+                            <li><strong>Step 2</strong>: Yell “QUACK!” three times in a mirror. If nothing changes, congratulations—you’ve successfully summoned zero help. 🎉</li>
+                            <br>
+                            <li><strong>Step 3</strong>: Try rubberducking! Yelling at inanimate objects can be surprisingly therapeutic—just remember, they’re not great listeners, but they won't judge your quacking either!</li>
+                            <br>
+                            <li><strong>Step 4</strong>: Write us a heartfelt message below. We won’t read it, but typing it out might make you feel better. Blame Greg if you want. Everyone does. But good luck finding the address.</li>
+                        </ol>
+                        <p>But wait, since you’re persistent enough to get here, here’s some additional wisdom for you:</p>
+                        <br>
+                        <strong>Hitchhiker’s Guide to Duck-tective Support:</strong>
+                        <ol>
+                            <li><strong>Trouble Finding a Clue?</strong> Look harder. The ducks believe in you… sort of. No, we won’t help you find it, but perhaps it’s hidden in plain sight—just like your sense of direction.</li>
+                            <br>
+                            <li><strong>Lost Your Rubber Duck?</strong> First of all, HOW COULD YOU?! Second of all, don’t panic. Actually, panic a little. Finding it is now your life's purpose, and sadly, we’re not offering any rewards… except maybe eternal duck-shaped glory.</li>
+                            <br>
+                            <li><strong>Forgot Your Password?</strong> Quack at the moon for three nights straight. If the password doesn’t magically return, you might just need to admit you’ve lost it and start fresh. Or remember that you wrote it on a napkin. Check under the pizza box.</li>
+                            <br>
+                            <li><strong>Greg Messed Up Again?</strong> Yep. Classic Greg. Whether he crashed the server, lost the clues, or just plain ruined your fun, rest assured it’s always his fault. We’d fire him, but he’s the only one who knows how to operate the top-secret army of "Darkwing ducks" guarding our servers. <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic.tvtropes.org%2Fpmwiki%2Fpub%2Fimages%2Fducktales_remastered__gizmo_duck.png&f=1&nofb=1&ipt=9b62c92c727437a1ac2d5bece393a65baa6d0a2e72342e1e082a2d1df80b5a36&ipo=images">🐹</li>
+                        </ol>
+                        <p><strong>The Bottom Line</strong>: You're on your own, but hey, isn’t that what being a duck detective is all about?</p>
+
+                        <p>Good luck, brave quacker! 🦆</p>
+                    </span>
+                </div>.
+            </div>
+        </div>
+
+        <div class="footer">
+            <h2>By registering, you agree to our <div class="popup" onclick="togglePopup(event, 'TermsPopup')">Terms of Service
+                <span class="popuptext" id="TermsPopup">
+                    <strong>Terms of Service</strong>
+                    <p>Welcome, brave soul, to the legendary Feathered Bureau of Investigation! By using our site, you agree to the following hilariously unbreakable rules (seriously, don’t test us):</p>
+                    <ol>
+                        <br>
+                        <li><strong>Accountability (or lack thereof)</strong><br>By signing up, you agree to take full responsibility for all questionable decisions made in the game. If you lose the rubber duck, forget passwords, or accidentally tattoo "Quacker King" on yourself, that’s on you.</li>
+                        <br>
+                        <li><strong>Duck Rights</strong><br>All ducks, rubber or otherwise, belong to us. If you see a duck and think, "Hey, that’s my duck now!" you are wrong. It’s ours. However, if you find a missing duck, let us know, and we'll reward you with… more ducks.</li>
+                        <br>
+                        <li><strong>Time Travel</strong><br>If you somehow manage to travel back in time during gameplay, do not try to rewrite these terms to avoid any mistakes. It won’t work. We know you too well.</li>
+                        <br>
+                        <li><strong>No Quacking After 10 PM</strong><br>Quacking is strictly forbidden between 10 PM and 6 AM. Anyone caught quacking past curfew will be banned from all future parties (and we throw good parties).</li>
+                        <br>
+                        <li><strong>Blame Game</strong><br>Should the game malfunction, your clues vanish into thin air, or you wake up wondering why you registered in the first place… just blame Greg. It’s always Greg's fault. Thanks, Greg.</li>
+                        <br>
+                        <li><strong>Endgame</strong><br>If you win the game and uncover all the clues, congratulations! Your prize is the satisfaction of knowing you’re smarter than everyone else. No, we won’t give you a golden duck. You get our undying respect, though.</li>
+                    </ol>
+                </span>
+            </div> and
+                <div class="popup" onclick="togglePopup(event, 'PricvacyPopup')">Privacy Policy
+                    <span class="popuptext" id="PricvacyPopup">
+                        <strong>Privacy Policy</strong>
+                        <p>We value your privacy like we value our rubber ducks (which is to say, we cherish it dearly). Here’s how we’ll handle your data:</p>
+                        <ol>
+                            <br>
+                            <li><strong>Personal Data</strong><br>We only collect the bare minimum: your name, email, and your deepest, darkest secrets (just kidding, we don’t need those). We promise not to sell your data unless someone offers us a billion dollars… then we’ll think about it.</li>
+                            <br>
+                            <li><strong>Cookies (The Not-So-Yummy Kind)</strong><br>Yes, we use cookies, but not the kind with chocolate chips. These cookies track your game progress and make sure you don’t forget where you left off. They also remind us to send you a duck emoji every now and then. 🍩 <-- cookie.</li>
+                                <br>
+                                <li><strong>Data Sharing</strong><br>We only share your data with… no one, really. Except maybe the ducks. They seem to like keeping tabs on things. Also, if the government asks for your data, we’ll hand it over, but we’ll make sure to give it to them wrapped in a funny meme.</li>
+                                <br>
+                                <li><strong>Security</strong><br>We store your data in a super-secure fortress guarded by ninjas, rubber ducks, and laser-shooting cats. Seriously, though, we do take security seriously (but we really wish we had those laser-shooting cats).</li>
+                                <br>
+                                <li><strong>Data Breaches</strong><br>If we ever have a data breach (thanks again, Greg), we’ll notify you via carrier pigeon, smoke signal, or possibly email. You’ll know it’s from us because the subject line will read, "Oops, Our Bad."</li>
+                                <br>
+                                <li><strong>Your Rights</strong><br>You have the right to access your data, delete your account, or demand to know why we love ducks so much. We’re obligated to answer the first two; the last one is a mystery for the ages.</li>
+                                <br>
+                                <li><strong>Children's Privacy</strong><br>If you’re under 13, please go ask your parents before registering. If you’re over 13, proceed with caution. Our sense of humor might be too advanced for you.</li>
+                            </ol>
+                            </span>
+                        </div>.
+                    </h2>
+                </div>
+            </body>
+
+            <script>
+            window.onload = function () {
+        const fp = new FingerprintJS();
+        fp.get().then(result => {
+            // Store the fingerprint in a hidden input field
+            document.getElementById('fingerprint').value = result;
+        });
+    };
+    // Function to toggle the visibility of the popups
+    function togglePopup(event, popupId) {
+        event.stopPropagation(); // Prevent click from bubbling up to the window
+        const popup = document.getElementById(popupId);
+
+        // Close all popups first
+        closeAllPopups();
+
+        // Show the popup
+        popup.classList.add("visible");
+    }
+
+    // Function to close all popups
+    function closeAllPopups() {
+        const popups = document.querySelectorAll('.popuptext');
+        popups.forEach((popup) => {
+            popup.classList.remove("visible");
+        });
+    }
+
+    // Event listener to close popups when clicking outside
+    window.onclick = function(event) {
+        if (!event.target.matches('.popup')) {
+            closeAllPopups();
+        }
+    }
+            </script>
+{% endblock %}

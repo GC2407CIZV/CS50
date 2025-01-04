@@ -1,0 +1,447 @@
+/* Reset some basic styles */
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+}
+
+/* Header styling */
+.header {
+    background-color: #4267B2;
+    color: white;
+    text-align: center;
+    padding: 10px 20px;
+    font-size: 24px;
+    font-weight: bold;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Container for layout */
+.container {
+    display: flex;
+    max-width: 100%;
+    /* Allow container to use full width */
+    margin: 20px auto;
+    gap: 20px;
+    flex-wrap: wrap;
+    /* Wrap items if they overflow */
+}
+
+/* Sidebar styling */
+.sidebar {
+    flex: 0 0 300px;
+    /* Fixed width for sidebar */
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+/* Profile section */
+.profile-info {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.profile-pic {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    border: 4px solid #4267B2;
+    /* Stylish border color */
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 22px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+p {
+    color: #666;
+    font-size: 14px;
+}
+
+/* Friends list */
+.friends-list {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.friends-list li {
+    display: flex;
+    align-items: center;
+    padding: 8px 0;
+    font-size: 14px;
+    color: #333;
+}
+
+.friends-list li:hover {
+    color: #4267B2;
+    /* Hover color */
+}
+
+.friends-list img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+
+
+/* Feed styling */
+.feed {
+    flex: 1;
+    /* Take up the remaining space */
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    /* Full width within its container */
+}
+
+/* Post styling */
+.post {
+    background-color: white;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+    display: flex;
+    /* Align items horizontally */
+    align-items: flex-start;
+    /* Align items at the start of the container */
+}
+
+.post img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+/* Video styling */
+.video {
+    max-width: 100%;
+    /* Ensure it scales responsively */
+    height: auto;
+    /* Maintain aspect ratio */
+    border-radius: 8px;
+    /* Same border radius as post images */
+    margin-top: 10px;
+    /* Space above the video */
+}
+
+/* Post text styling */
+.post p {
+    color: #1c1e21;
+    font-size: 16px;
+    /* Adjusted letter size */
+    margin-bottom: 10px;
+}
+
+.post-time {
+    color: #606770;
+    font-size: 12px;
+}
+
+/* Post profile picture */
+.post-profile-pic {
+    width: 50px;
+    /* Adjusted size */
+    height: 50px;
+    /* Adjusted size */
+    border-radius: 50%;
+    margin-right: 15px;
+    /* Space between profile picture and text */
+}
+
+/* Post actions (like, comment, share) */
+.post-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #e9ebee;
+}
+
+/* Post content styling */
+.post-content {
+    flex: 1;
+    /* Allow the content to take up the remaining space */
+}
+
+.action-btn {
+    padding: 8px;
+    background-color: #f0f2f5;
+    border: none;
+    border-radius: 20px;
+    font-size: 14px;
+    color: #606770;
+    cursor: pointer;
+    flex-grow: 1;
+    text-align: center;
+    margin-right: 10px;
+}
+
+.action-btn:hover {
+    background-color: #e4e6eb;
+}
+
+.action-btn:last-child {
+    margin-right: 0;
+}
+
+/* Ads section */
+.ads {
+    flex: 0 0 300px;
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.ad {
+    margin-bottom: 20px;
+}
+
+.ad img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #4267B2;
+    color: white;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+/* Comments section */
+.comments {
+    background-color: #f0f2f5;
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+.comment {
+    background-color: white;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+}
+
+.comment-time {
+    font-size: 12px;
+    color: #606770;
+}
+
+/* Sidebar links */
+.sidebar-links {
+    margin-top: 20px;
+}
+
+.sidebar-links .icon {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar-links .icon:hover {
+    background-color: #f0f2f5;
+    /* Hover effect */
+}
+
+.sidebar-links .icon img {
+    width: 30px;
+    height: 30px;
+    margin-right: 12px;
+    vertical-align: middle;
+}
+
+.sidebar-links .icon a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    line-height: 30px;
+    /* Match this with the height of the icon for better vertical alignment */
+    vertical-align: middle;
+    /* Align the text with the middle of the icon */
+    display: inline-flex;
+    align-items: center;
+}
+
+.sidebar-links .icon a:hover {
+    color: #4267B2;
+    /* Hover color */
+}
+
+/* Chat Box styling */
+.chat-box {
+    position: fixed;
+    bottom: 0;
+    right: 20px;
+    width: 300px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+}
+
+.chat-header {
+    background-color: #007bff;
+    color: #fff;
+    padding: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.minimize-btn {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.minimize-btn:hover {
+    opacity: 0.8;
+    /* Slight change on hover */
+    background-color: #2990FF;
+    border-radius: 5px;
+}
+
+.chat-body {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+    height: 300px;
+    /* Adjust as needed */
+    display: flex;
+    flex-direction: column;
+}
+
+.message {
+    max-width: 75%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    word-wrap: break-word;
+}
+
+.sender-message {
+    color: #fff;
+    /* Force text color to white */
+    align-self: flex-end;
+    background-color: #04A4FF;
+    /* Blue background for sender messages */
+    padding: 10px;
+    /* Padding for sender messages */
+    border-radius: 5px;
+    /* Rounded corners for sender messages */
+}
+
+.responder-message {
+    align-self: flex-start;
+    /* Align bot messages to the left */
+    background-color: #e9ecef;
+    color: #000;
+    padding: 10px;
+    border-radius: 5px;
+    /* Rounded corners for sender messages */
+
+}
+
+.chat-footer {
+    display: flex;
+    border-top: 1px solid #ddd;
+    padding: 10px;
+    background-color: #f9f9f9;
+}
+
+.chat-input {
+    flex: 1;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.chat-send {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Chat Button styling */
+.chat-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 25%;
+    padding: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.chat-button:hover {
+    opacity: 0.8;
+    /* Slight change on hover */
+}
+
+.hidden {
+    display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 400px) {
+    .chat-box {
+        width: 100%;
+        /* Full width on small screens */
+        right: 0;
+        border-radius: 0;
+        /* No rounding */
+    }
+}

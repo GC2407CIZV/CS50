@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dark Wing Tattoo</title>
+        <link rel="stylesheet" href="/static/css/tattoo.css">
+        <link href="/static/images/icons/tattoo.png" rel="icon">
+        <script src="/static/script.js" defer></script>
+
+    </head>
+
+    <body>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="/static/images/tattoo/0.png" alt="Picture 1" loading="eager" onclick="openLightbox(this.src)">
+            </div>
+            <div class="gallery-item">
+                <img src="/static/images/tattoo/6.jpg" alt="Picture 2" loading="eager" onclick="openLightbox(this.src)">
+            </div>
+            <div class="gallery-item">
+                <img src="/static/images/tattoo/5.jpg" alt="Picture 3" loading="eager" onclick="openLightbox(this.src)">
+            </div>
+            <div class="gallery-item">
+                <img src="/static/images/tattoo/7.jpg" alt="Picture 4" loading="eager" onclick="openLightbox(this.src)">
+            </div>
+            <div class="gallery-item">
+                <img src="/static/images/tattoo/1.jpg" alt="Picture 5" loading="eager" onclick="openLightbox(this.src)">
+            </div>
+            <div class="gallery-item">
+                <img src="/static/images/tattoo/2.jpg" alt="Picture 6" loading="eager" onclick="openLightbox(this.src)">
+            </div>
+            <div class="gallery-item">
+                <img src="/static/images/tattoo/3.jpg" alt="Picture 7" loading="eager" onclick="openLightbox(this.src)">
+            </div>
+            <div class="gallery-item">
+                <img src="/static/images/tattoo/4.jpg" alt="Picture 8" loading="eager" onclick="openLightbox(this.src)">
+            </div>
+            <div class="gallery-item">
+                <img src="/static/images/tattoo/8.jpg" alt="Picture 9" loading="eager" onclick="openLightbox(this.src)">
+            </div>
+            <div class="gallery-item">
+                <img src="/static/images/tattoo/9.png" alt="Picture 10" loading="eager" onclick="openLightbox(this.src)">
+            </div>
+            <div class="gallery-item">
+                <img src="/static/images/tattoo/10.jpg" alt="Picture 11" loading="eager" onclick="openLightbox(this.src)">
+            </div>
+            <div class="gallery-item">
+                <img src="/static/images/tattoo/11.jpg" alt="Picture 12" loading="eager" onclick="openLightbox(this.src)">
+            </div>
+            <div class="gallery-item">
+                <img src="/static/images/tattoo/12.jpg" alt="Picture 13" loading="eager" onclick="openLightbox(this.src)">
+            </div>
+        </div>
+
+        <!-- Lightbox Container -->
+        <div class="lightbox" id="lightbox" style="display:none;">
+            <button class="close" onclick="closeLightbox()">&times;</button>
+            <img id="lightbox-img" class="lightbox-img" style="display:none;" />
+            <video id="lightbox-video" controls style="display:none;"></video>
+            <button class="prev" id="prev-btn">&#10094;</button>
+            <button class="next" id="next-btn">&#10095;</button>
+        </div>
+
+    </body>
+
+</html>

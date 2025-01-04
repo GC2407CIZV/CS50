@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Scoreboard
+{% endblock %}
+
+{% block main %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scoreboard</title>
+    <link rel="stylesheet" href="/static/css/scoreboard.css">
+    <script src="/static/script.js" defer></script>
+    </head>
+
+    <body>
+        <h1>Game Scoreboard</h1>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Rank</th>
+                    <th>Player Name</th>
+                    <th>Completed in (HH:MM:SS)</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for score in scores %}
+                    <tr {% if score.user_id == current_user_id %}class="highlight" {% endif %}>
+                        <td>{{ loop.index }}</td>
+                        <td>{{ score['username'] }}</td>
+                        <td>{{ score['completion_time'] | default(0) | format_time }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <script>
+        // Stop the timer when the success message is displayed
+            const successMessage = "{{ get_flashed_messages()[0] }}"; // Get the flashed success message
+
+            if (successMessage.includes("Congratulations! Your score has been recorded.")) {
+                stopTimer();
+            } // Call the stopTimer function defined in your dashboard script
+        </script>
+    </body>
+{% endblock %}

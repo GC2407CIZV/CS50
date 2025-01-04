@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Legacy</title>
+        <link rel="stylesheet" href="/static/css/legacy.css">
+        <link href="/static/images/icons/4.png" rel="icon">
+    </head>
+
+    <body>
+        <canvas id="fireworks"></canvas>
+        <div class="title">
+
+            {% if player_rank == 1 %}
+                <h1 id="congrats-text1">Congratulations, {{username}}, <br>standing tall at the summit of excellence!</h1>
+                <img src="/static/images/icons/lion.png" alt="First Place Wreath" class="rank-icon">
+
+                <h2 id="finish-rank1"> You’ve claimed <strong><span id="player-rank"> {{ player_rank }} </span> place!</strong></h2>
+                <h2>
+                    Your relentless pursuit of greatness has culminated in a glorious triumph, etching your name into the annals of legends. <br> Few can ascend to this exalted pinnacle, but like a lion donning a magnificent crown, you have proven that true champions roar louder than the rest.
+
+                    <div><br>The crown is yours—an emblem of your fierce determination and brilliance. <br> Adorn yourself with it, for you have conquered challenges that would daunt the boldest of hearts. <br> Today, you stand not just as a victor but as a sovereign of your destiny, basking in the radiant glow of your hard-won glory. </div>
+                    <div id="winner"><br>Continue to lead with unwavering courage, for the path of greatness stretches before you like a vast savanna, filled with new adventures and untold conquests.
+                        Onward, fearless monarch of your realm—your legacy is just beginning!
+                    </div>
+                </h2>
+
+            {% elif player_rank == 2 %}
+                <h1 id="congrats-text2">Well done, {{username}}, <br>a position of honor and resilience!</h1>
+                <img src="/static/images/icons/2.png" alt="Second Place Wreath" class="rank-icon">
+                <h2 id="finish-rank2">You’re currently holding <strong><span id="player-rank"> {{ player_rank }} </span> place!</strong></h2>
+                <h2>
+                    Your journey has been extraordinary, and while you narrowly missed the top, your spirit and skill have earned you great recognition.
+                    <br>The silver shield of your achievement gleams brightly, reflecting the effort, dedication, and passion you’ve poured into your quest.
+                    <div><br>The fight isn’t over—the top is within your reach. Keep your eyes on the horizon, for your next victory awaits.</div>
+                    <div id="second"><br>Stay strong, and let this accomplishment fuel your next climb to greatness!"</div>
+                </h2>
+
+            {% elif player_rank == 3 %}
+                <h1 id="congrats-text3">Bravo, {{username}}, a remarkable achievement <br>that reflects your determination and drive!</h1>
+                <img src="/static/images/icons/3.png" alt="Third Place Wreath" class="rank-icon">
+                <h2 id="finish-rank3">You’re currently holding <strong><span id="player-rank"> {{ player_rank }} </span> place!</strong></h2>
+                <h2>
+                    Your efforts have brought you here, and your journey has earned you respect and admiration. <br>You stand as a beacon of persistence, proving that every step forward is a victory in itself.
+                    <div><br>Your bronze honor is a testament to your ability to rise above challenges and persevere. <br>But this is just the beginning—greater heights are still ahead. <br>Keep pushing forward, for each achievement brings you closer to even more extraordinary triumphs.</div>
+                    <div id="third"><br>Stay hungry for success!</div>
+                </h2>
+            {% else %}
+                <h1 id="congrats-text">Welcome back, {{username}}! <br>Your journey continues, and the best is yet to come!</h1>
+                <img src="/static/images/icons/4.png" alt="Rank higher than 4" class="rank-icon">
+                <h2 id="finish-rank">You’re currently holding <strong><span id="player-rank"> {{ player_rank }} </span> place!</strong></h2>
+                <h2>
+                    Born from the fires of curiosity and tempered by unwavering determination, you have ascended to the pinnacle of your journey.<br>
+                    Your name is now etched in the annals of legends, a beacon of greatness that inspires others.<br><br>
+                    <div><strong>Embrace the journey, fearless seeker!</strong> Life unfolds as a boundless tapestry of experiences, each moment offering the gift of knowledge.<br>
+                        Let your insatiable curiosity be your compass, pursue wisdom in every encounter, and rise to meet the challenges before you,<br>
+                        for they are the very stepping stones to your grandest adventures. <br><br>What will you conquer next?</div>
+                </h2>
+            {% endif %}
+        </div>
+        <div class="footer">
+            <h2>Created by Gregory Charles, with inspiration and support from AI, community forums, w3schools, and CS50.</h2>
+        </div>
+
+        <script>
+            // Function to add ordinal suffix to a rank number
+            function getOrdinalSuffix(rank) {
+                const j = rank % 10;
+                const k = rank % 100;
+
+                if (j === 1 && k !== 11) {
+                    return `${rank}st`;
+                } else if (j === 2 && k !== 12) {
+                    return `${rank}nd`;
+                } else if (j === 3 && k !== 13) {
+                    return `${rank}rd`;
+                } else {
+                    return `${rank}th`;
+                }
+            }
+
+            // Function to display the player's rank with the ordinal suffix
+            function displayCongrats(rank) {
+                const playerRankElement = document.getElementById('player-rank');
+                playerRankElement.textContent = getOrdinalSuffix(rank); // Update the rank with the correct ordinal suffix
+            }
+
+            // Assuming you retrieve the player's rank from the server and pass it to this script
+            const playerRank = parseInt("{{ player_rank }}", 10); // Ensure rank is a number
+            displayCongrats(playerRank); // Display the rank with the correct ordinal suffix
+
+
+            // FIREWORKS
+            const canvas = document.getElementById('fireworks');
+            const ctx = canvas.getContext('2d');
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+
+            class Firework {
+                constructor() {
+                    this.x = Math.random() * canvas.width;
+                    this.y = canvas.height;
+                    this.targetY = Math.random() * (canvas.height * 0.7);
+                    this.color = this.getRandomColor();
+                    this.radius = 1.5;
+                    this.speed = Math.random() * 2 + 2;
+                    this.exploded = false;
+                    this.particles = [];
+                }
+
+                getRandomColor() {
+                    const colors = [
+                        '#FF0000', // Red
+                        '#FF7F00', // Orange
+                        '#FFFF00', // Yellow
+                        '#00FF00', // Green
+                        '#0000FF', // Blue
+                        '#4B0082', // Indigo
+                        '#9400D3', // Violet
+                        '#FFFFFF', // White
+                        '#FFD700', // Gold
+                        '#FF69B4' // Pink
+                    ];
+                    return colors[Math.floor(Math.random() * colors.length)];
+                }
+
+                launch() {
+                    if (this.y > this.targetY) {
+                        this.y -= this.speed;
+                        this.drawRocket();
+                    } else if (!this.exploded) {
+                        this.explode();
+                    }
+                }
+
+                drawRocket() {
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                    ctx.fillStyle = this.color;
+                    ctx.fill();
+                }
+
+                explode() {
+                    this.exploded = true; // Mark as exploded
+                    const particleCount = 80; // Number of particles
+                    for (let i = 0; i < particleCount; i++) {
+                        this.particles.push(new Particle(this.x, this.y, this.color));
+                    }
+                }
+
+                update() {
+                    this.launch();
+                    if (this.exploded) {
+                        this.particles.forEach((particle, index) => {
+                            particle.update();
+                            if (particle.lifespan <= 0) {
+                                this.particles.splice(index, 1);
+                            }
+                        });
+                    }
+                }
+            }
+
+            class Particle {
+                constructor(x, y, color) {
+                    this.x = x;
+                    this.y = y;
+                    this.speedX = (Math.random() - 0.5) * 5; // Reduced speed for realism
+                    this.speedY = (Math.random() - 0.5) * 5;
+                    this.gravity = 0.05; // Gravity to pull particles down
+                    this.lifespan = 80; // Lifespan of particles
+                    this.color = color;
+                    this.alpha = 1;
+                    this.size = Math.random() * 1 + 0.30; // Smaller particles (0.5 to 1.5)
+                    this.trail = [];
+                }
+
+                update() {
+                    this.speedY += this.gravity; // Apply gravity
+                    this.x += this.speedX; // Move horizontally
+                    this.y += this.speedY; // Move vertically
+                    this.alpha = Math.max(0, this.alpha - 0.025); // Gradually decrease alpha
+                    this.lifespan--;
+
+                    // Trail effect
+                    this.trail.push({
+                        x: this.x,
+                        y: this.y
+                    });
+                    if (this.trail.length > 5) this.trail.shift();
+
+                    this.draw();
+                }
+
+                draw() {
+                    ctx.save();
+                    ctx.globalAlpha = this.alpha; // Set alpha for current particle
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                    ctx.fillStyle = this.color;
+                    ctx.fill();
+                    ctx.restore();
+
+                    // Draw trail
+                    for (let i = 0; i < this.trail.length; i++) {
+                        ctx.beginPath();
+                        ctx.arc(this.trail[i].x, this.trail[i].y, this.size * (i / 5), 0, Math.PI * 2);
+                        ctx.fillStyle = this.color;
+                        ctx.fill();
+                    }
+                }
+            }
+
+            const fireworks = [];
+
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                fireworks.forEach((firework, index) => {
+                    firework.update();
+                    if (firework.particles.length === 0 && firework.exploded) {
+                        fireworks.splice(index, 1); // Remove firework after explosion
+                    }
+                });
+                requestAnimationFrame(animate);
+            }
+
+
+            setInterval(() => {
+                fireworks.push(new Firework());
+            }, 800); // Launch new fireworks every second
+
+            animate();
+        </script>
+    </body>
+
+</html>

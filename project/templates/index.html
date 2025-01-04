@@ -1,0 +1,185 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Dashboard
+{% endblock %}
+
+{% block main %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/static/css/dashboard.css">
+    <script src="/static/script.js" defer></script>
+
+    <div class="main-container">
+        <div class="left-container">
+            <div id="motto" class="icons">
+                <a href="/motto"><img class="" src="/static/images/icons/motto.png" alt="Motto"></a> <br><br>
+                <a href="/legacy"><img id="clueImage_4" class="{% if 21 in clue_ids %} {% else %}hiddenImage{% endif %}" src="/static/images/icons/lion.png" alt="Endgame"></a>
+            </div>
+        </div>
+        <div class="dashboard-container">
+            <h1>Feathered Bureau of Investigation</h1>
+            <br>
+            <div class="icons">
+                <a href="/fakebook"><img src="/static/images/fakebook/fakebook.png" alt="Fakebook"></a>&emsp;
+                <a href="/quacker"><img src="/static/images/icons/quacker.png" alt="Quacker"></a>&emsp;
+                <a href="/instaquam"><img src="/static/images/icons/instaquam.png" alt="Instaquam"></a>&emsp;
+                <a href="/newspaper"><img src="/static/images/icons/newspaper.png" alt="Newspaper"></a>&emsp;
+                <a href="/gallery"><img src="/static/images/icons/gallery.png" alt="Gallery"></a>
+                <br>
+                <br>
+                <a href="/hotel"><img id="clueImage_5" class="{% if 1 in clue_ids %} {% else %}hiddenImage{% endif %}" src="static/images/icons/hotel.png" alt="Hotel"></a>&emsp;&emsp;
+                <a href="/bar"><img id="clueImage_8" class="{% if 15 in clue_ids %} {% else %}hiddenImage{% endif %}" src="/static/images/icons/bar.png" alt="Bar"></a>&emsp;&emsp;
+                <a href="/beach"><img id="clueImage_7" class="{% if 14 in clue_ids %} {% else %}hiddenImage{% endif %}" src="/static/images/icons/beach.png" alt="Beach"></a>&emsp;&emsp;
+                <a href="/tattoo"><img id="clueImage_6" class="{% if 11 in clue_ids %}{% else %}hiddenImage{% endif %}" src="/static/images/icons/tattoo.png" alt="Tattoo"></a>&emsp;&emsp;
+                <a href="/party"><img id="clueImage_9" class="{% if 20 in clue_ids %} {% else %}hiddenImage{% endif %}" src="/static/images/icons/party.png" alt="Beach Party"></a>
+            </div>
+            <div class="clues">
+                <h2>Enter Clue</h2>
+                <form action="/clue_input" method="post">
+                    <div class="clue_input">
+                        <input autofocus class="form-control w-auto" type="text" name="what" placeholder="Clue" required>
+                        <input class="form-control w-auto" type="text" name="platform" placeholder="Where did you find the clue?" required>
+                        <button type="submit">Submit</button>
+                    </div>
+                </form>
+
+            <!-- Dynamically render clues here -->
+                <div class="clues-list">
+                    <h2>Found Clues</h2>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Clue</th>
+                                <th scope="col">Platform</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for clue in clues %}
+                                <tr>
+                                    <td>{{ clue.what }}</td>
+                                    <td>{{ clue.platform }}</td>
+                                </tr>
+                            {% else %}
+                                <tr>
+                                    <td colspan="2">No clues found.</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div id="clock" class="right-container">
+            <div class="clock-container">
+                Total time played: <br>
+                <span id="live-clock">00:00:00</span>
+                <br><br>
+                <div class="progress-container">
+                    <div class="progress-bar" id="progressBar"></div>
+                </div>
+                <div class="progress-info">
+                    <span id="percentageDisplay">{{ (clues_found / total_clues * 100) | int }}</span> Clues Found
+                </div>
+                <br>
+                <form action="/get_hint" method="post">
+                    <button type="submit" title="It will add 10 min to your time!">Hint</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script>
+        // Initialize variables for time spent
+        let totalTimeSpent = parseInt('{{ total_time_spent }}'); // Server-sent accumulated time in seconds
+        let sessionStartTime = Date.now(); // Track session start time
+        let sessionTimeSpent = 0; // Time spent in the current session
+
+        // Function to format time in DD:HH:MM:SS format
+        function formatTime(seconds) {
+            let days = Math.floor(seconds / (3600 * 24)); // Calculate total days
+            let hours = Math.floor((seconds % (3600 * 24)) / 3600); // Calculate remaining hours
+            let minutes = Math.floor((seconds % 3600) / 60); // Calculate remaining minutes
+            let secs = Math.floor(seconds % 60); // Calculate remaining seconds
+
+            return (
+                (days > 0 ? (days + 'd ') : '') + // Show days only if > 0
+                (hours < 10 ? '0' : '') + hours + ':' +
+                (minutes < 10 ? '0' : '') + minutes + ':' +
+                (secs < 10 ? '0' : '') + secs
+            );
+        }
+
+        // Function to update the clock display
+        function updateClock() {
+            let currentTime = Date.now();
+            let timeElapsed = Math.floor((currentTime - sessionStartTime) / 1000); // Elapsed time in seconds
+            sessionTimeSpent = timeElapsed; // Update session time spent
+
+            // Update the clock display in DD:HH:MM:SS format
+            document.getElementById('live-clock').innerText = formatTime(totalTimeSpent + sessionTimeSpent);
+        }
+
+        // Periodically update time spent on server
+        function saveTimeSpent() {
+            let totalSeconds = totalTimeSpent + sessionTimeSpent;
+
+            // Send a POST request to save the session time on the server
+            fetch('/save_time', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    timeSpent: totalSeconds
+                })
+            })
+            .then(response => {
+                if (!response.ok) {
+                    console.error('Failed to save time');
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        }
+
+        // Save time when the user logs out
+        function handleLogout() {
+            // Save the total time spent in this session before logging out
+            saveTimeSpent(); // Optional: Ensure time is saved before logging out
+
+            // Reset session tracking
+            sessionTimeSpent = 0;
+            sessionStartTime = Date.now(); // Reset for the next login
+        }
+
+        // Start the clock and update every second
+        setInterval(updateClock, 1000);
+
+        // Save time every 30 seconds
+        setInterval(saveTimeSpent, 30000);
+
+        // Optionally save time on page unload
+        window.addEventListener('beforeunload', saveTimeSpent);
+
+        // Values passed from Flask
+        var cluesFound = {{ clues_found }};
+        var totalClues = {{ total_clues }};
+
+        // Function to update the progress bar based on clues found
+        function updateProgressBar() {
+            var percentage = totalClues > 0 ? (cluesFound / totalClues) * 100 : 0; // Avoid division by zero
+            var progressBar = document.getElementById('progressBar'); // Get the progress bar element
+            progressBar.style.width = percentage + '%'; // Update the width of the bar
+            document.getElementById('percentageDisplay').innerText = Math.round(percentage) + '%'; // Display percentage
+        }
+
+        // Call the function to update the progress bar when the page loads
+        updateProgressBar();
+    </script>
+
+
+
+
+{% endblock %}

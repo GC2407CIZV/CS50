@@ -1,0 +1,33 @@
+If songs.db contains the top 100 songs of one listener from 2018, how would you characterize their audio aura?
+
+The data is based on the average (valence, energy, danceability, speechiness)
+
+VALENCE
+Average of 0.484443
+
+ENERGY
+Average of 0.65906
+
+DACEABILITY
+Average of 0.71646
+
+SPEECHINESS
+Average of 0.115569
+
+Conclusion:
+As we can see the listener likes music that doesn't really have much speech(lyrics) in it, but a lot of danceabilty.
+Which means that this person doesn't really engage in karaoke sessions but more into dancing.
+
+Also with an average of 0.48 in valence would mean the person is more into sad music; perhaps a bad break up, depression,...
+Therefore listening to music with a higher energy and a lot of danceability to vent his emotions out to keep them sane.
+
+Hypothesize about why the way you’ve calculated this aura might not be very representative of the listener.
+What better ways of calculating this aura would you propose?
+
+First we don't know anything about the person; age, state of mind, stress levels, work, relationships,... etc
+A person doesn't only listen to 100 songs. Many people also have music they listen with there friends (that everyone likes),
+and music they listen in more private times. We have no idea if this file is with friends or personal.
+Also everyday is different, therefore the person might be happy but listening to some sad music because it gives him some nostalgia
+(remembering some good old memories).
+
+In conclusion with more data we can learn more about the person and recommend more. In case with AI become the person.

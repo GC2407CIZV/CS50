@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Picture Gallery</title>
+        <link rel="stylesheet" href="/static/css/gallery.css">
+        <link href="/static/images/icons/gallery.png" rel="icon">
+        <script src="/static/script.js" defer></script>
+    </head>
+
+    <body>
+        <div class="phone-frame">
+            <div class="inner-phone">
+                <div class="gallery">
+
+                    <div class="gallery-item">
+                        <img src="static/images/gallery/1.jpg" alt="Picture 1" title="What is that!?" onclick="openLightbox(this.src, 'image');">
+                    </div>
+                    <div class="gallery-item">
+                        <video onclick="openLightbox(this.src, 'video')">
+                            <source src="/static/images/gallery/video.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="/static/images/gallery/28.jpg" alt="Picture 2" onclick="openLightbox(this.src, 'image');">
+                    </div>
+                    <div id="clueImage_10" class="gallery-item {% if 19 in clue_ids %} {% else %} hiddenImage {% endif %}">
+                        <img src="/static/images/gallery/29.png" alt="Picture 3" onclick="openLightbox(this.src, 'image');">
+                    </div>
+                    <div id="clueImage_0" class="gallery-item {% if 1 in clue_ids %} {% else %} hiddenImage {% endif %}">
+                        <img src="/static/images/gallery/event.png" alt="Picture 4" onclick="openLightbox(this.src, 'image');">
+                    </div>
+                    <div id="clueImage_0" class="gallery-item {% if 1 in clue_ids %}  {% else %} hiddenImage {% endif %}">
+                        <img src="/static/images/gallery/18.png" alt="Picture 4.5" onclick="openLightbox(this.src, 'image');">
+                    </div>
+                    <div id="clueImage_0" class="gallery-item {% if 1 in clue_ids %}  {% else %} hiddenImage {% endif %}">
+                        <img src="static/images/gallery/6.png" alt="Picture 5" onclick="openLightbox(this.src, 'image');">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="/static/images/gallery/1.png" alt="Picture 6" onclick="openLightbox(this.src, 'image');">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="/static/images/gallery/2.png" alt="Picture 7" onclick="openLightbox(this.src, 'image');">
+                    </div>
+
+                    <div class="gallery-item">
+                        <img src="/static/images/gallery/3.png" alt="Picture 8" onclick="openLightbox(this.src, 'image');">
+                    </div>
+
+                    <div class="gallery-item">
+                        <img src="/static/images/gallery/4.png" alt="Picture 9" onclick="openLightbox(this.src, 'image');">
+                    </div>
+                    <div class="gallery-item ">
+                        <img src="/static/images/gallery/5.png" alt="Picture 10" onclick="openLightbox(this.src, 'image');">
+                    </div>
+                    <div class="gallery-item ">
+                        <img src="/static/images/gallery/7.jpg" alt="Picture 11" onclick="openLightbox(this.src, 'image');">
+                    </div>
+                    <div class="gallery-item ">
+                        <img src="/static/images/gallery/8.jpg" alt="Picture 12" onclick="openLightbox(this.src, 'image');">
+                    </div>
+                    <div class="gallery-item ">
+                        <img src="/static/images/gallery/9.jpg" alt="Picture 13" onclick="openLightbox(this.src, 'image');">
+                    </div>
+                    <div class="gallery-item ">
+                        <img src="/static/images/gallery/10.jpg" alt="Picture 14" onclick="openLightbox(this.src, 'image');">
+                    </div>
+                    <div class="gallery-item ">
+                        <img src="/static/images/gallery/11.jpg" alt="Picture 15" onclick="openLightbox(this.src, 'image');">
+                    </div>
+                    <div class="gallery-item ">
+                        <img src="/static/images/gallery/12.jpeg" alt="Picture 16" onclick="openLightbox(this.src, 'image');">
+                    </div>
+                    <div class="gallery-item ">
+                        <img src="/static/images/gallery/13.jpg" alt="Picture 17" onclick="openLightbox(this.src, 'image');">
+                    </div>
+                    <div class="gallery-item ">
+                        <img src="/static/images/gallery/14.jpg" alt="Picture 18" onclick="openLightbox(this.src, 'image');">
+                    </div>
+                    <div class="gallery-item ">
+                        <img src="/static/images/gallery/15.jpg" alt="Picture 19" onclick="openLightbox(this.src, 'image');">
+                    </div>
+                    <div class="gallery-item ">
+                        <img src="/static/images/gallery/16.jpg" alt="Picture 20" onclick="openLightbox(this.src, 'image');">
+                    </div>
+                    <div class="gallery-item ">
+                        <img src="/static/images/gallery/17.jpg" alt="Picture 21" onclick="openLightbox(this.src, 'image');">
+                    </div>
+                    <div class="gallery-item ">
+                        <img src="/static/images/gallery/19.jpg" alt="Picture 23" onclick="openLightbox(this.src, 'image');">
+                    </div>
+                    <div class="gallery-item ">
+                        <img src="/static/images/gallery/20.jpg" alt="Picture 24" onclick="openLightbox(this.src, 'image');">
+                    </div>
+                    <div class="gallery-item ">
+                        <img src="/static/images/gallery/21.jpg" alt="Picture 25" onclick="openLightbox(this.src, 'image');">
+                    </div>
+                    <div class="gallery-item ">
+                        <img src="/static/images/gallery/22.jpg" alt="Picture 26" onclick="openLightbox(this.src, 'image');">
+                    </div>
+                    <div class="gallery-item ">
+                        <img src="/static/images/gallery/23.jpg" alt="Picture 27" onclick="openLightbox(this.src, 'image');">
+                    </div>
+                    <div class="gallery-item ">
+                        <img src="/static/images/gallery/24.jpg" alt="Picture 28" onclick="openLightbox(this.src, 'image');">
+                    </div>
+                    <div class="gallery-item ">
+                        <img src="/static/images/gallery/25.jpg" alt="Picture 29" onclick="openLightbox(this.src, 'image');">
+                    </div>
+                    <div class="gallery-item ">
+                        <img src="/static/images/gallery/26.jpg" alt="Picture 30" onclick="openLightbox(this.src, 'image');">
+                    </div>
+                    <div class="gallery-item ">
+                        <img src="/static/images/gallery/27.jpg" alt="Picture 31" onclick="openLightbox(this.src, 'image');">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lightbox Container -->
+        <div class="lightbox" id="lightbox" style="display:none;">
+            <button class="close" onclick="closeLightbox()">&times;</button>
+            <img id="lightbox-img" class="lightbox-img" style="display:none;" />
+            <video id="lightbox-video" controls style="display:none;"></video>
+            <button class="prev" id="prev-btn">&#10094;</button>
+            <button class="next" id="next-btn">&#10095;</button>
+        </div>
+
+
+    </body>
+
+</html>
