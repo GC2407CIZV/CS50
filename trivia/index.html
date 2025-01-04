@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            // TODO: Add code to check answers to questions PART 1
+            document.addEventListener('DOMContentLoaded',function(){
+                // When answer is correct, button change to green
+                let green = document.querySelector('.green');
+                green.addEventListener('click', function(){
+                    green.style.backgroundColor = "green"; document.querySelector("#answer1").innerHTML = "Correct!";
+                })
+                   // When answer is not correct, button change to different color
+                let blue = document.querySelector('.blue');
+                blue.addEventListener('click', function(){
+                    blue.style.backgroundColor = "blue"; document.querySelector("#answer1").innerHTML = "Incorrect!";
+                })
+                let purple = document.querySelector('.purple');
+                purple.addEventListener('click', function(){
+                    purple.style.backgroundColor = "purple"; document.querySelector("#answer1").innerHTML = "Incorrect!";
+                })
+                let orange = document.querySelector('.orange');
+                orange.addEventListener('click', function(){
+                    orange.style.backgroundColor = "orange"; document.querySelector("#answer1").innerHTML = "Incorrect!";
+                })
+                let red = document.querySelector('.red');
+                red.addEventListener('click', function(){
+                    red.style.backgroundColor = "red"; document.querySelector("#answer1").innerHTML = "Incorrect!";
+                })
+
+            // TODO: Add code to check answers to questions PART 2
+                document.querySelector('#check').addEventListener("click", function(){
+                    let input = document.querySelector('input');
+                    if (input.value.toLowerCase() == 'kiwi') {
+                        input.style.backgroundColor ='green';
+                        document.querySelector('#answer2').innerHTML = 'Correct!';
+                    } else {
+                        input.style.backgroundColor ='red';
+                        document.querySelector('#answer2').innerHTML = 'Inorrect!';
+                    }
+                });
+        });
+
+        </script>
+    </head>
+
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <!-- TODO: Add multiple choice question here -->
+                <h3>Where is the green button? </h3>
+                <table>
+                    <tr> <!-- tr = row -->
+                        <td><button class="blue" type="text">Purple?</button></td>
+                        <td><button class="purple" type="text">Red?</button></td>
+                        <td><button class="green" type="text">Blue?</button></td>
+                        <td><button class="red" type="text">Orange?</button></td>
+                        <td><button class="orange" type="text">Green?</button></td>
+                    </tr>
+                </table>
+                <p id="answer1"></p>
+
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+
+                <!-- TODO: Add free response question here -->
+                 <h3>
+                    What is called at the same time a fruit, a bird or a person from a certain country?
+                 </h3>
+                 <form>
+                    <input type="text" placeholder="Guess">
+                    <button id="check">Check Answer</button>
+
+                    <p id="answer2"></p>
+                </form>
+
+            </div>
+        </div>
+    </body>
+
+</html>
