@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Profile
+{% endblock %}
+
+{% block main %}
+    <h1>PROFILE</h1>
+    <form action="/profile" method="post">
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="new-username" name="new-username" placeholder="e.g. user123" required type="text">
+        </div>
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" name="current-password" required type="password">
+        </div>
+        <button class="btn btn-primary bottom-margin-responsive" type="submit">Change Username</button>
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" name="new-password" placeholder="New password" required type="password">
+        </div>
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" name="confirmation" placeholder="Confirm Password" required type="password">
+        </div>
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" name="current-password" required type="password">
+        </div>
+        <button class="btn btn-primary" type="submit">Change Password</button>
+    </form>
+    </div>
+{% endblock %}
